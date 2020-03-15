@@ -27,7 +27,7 @@
     display: flex;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 8;
 }
 
 .nav-top-h {  
