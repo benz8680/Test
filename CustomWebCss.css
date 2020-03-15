@@ -562,6 +562,18 @@ input{
     margin: 10px 0;
 }
 
+.end{
+    background-color: #fe0;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0 ;
+    font-family: sans-serif;
+    font-size: 15px;
+    
+}
+
 
 
 
