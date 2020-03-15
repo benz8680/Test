@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyata</title>
+    <style>
+        .nav-top {
+            background-color: #000;
+            text-align: center;
+            height: 73px;
+
+
+        }
+
+        .nav-top>a {
+            display: inline-block;
+            line-height: 70px;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0 60px;
+            font-family: sans-serif;
+
+
+
+        }
+
+        .nav-top>a:hover {
+            border-bottom: 3px solid #ff0000;
+        }
+
+        .five-h1 {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 40px;
+
+        }
+
+        .nav-mid {
+            text-align: center;
+
+        }
+
+        .nav-mid>a {
+            display: inline-block;
+            text-decoration: none;
+            color: #000;
+            padding: 0 50px;
+            border: 0.5px dotted #000;
+            width: 100px;
+            height: 35px;
+            line-height: 30px;      
+            border-bottom: 2px solid #d00;
+            position: relative;
+
+        }
+
+        .nav-mid>a:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            opacity: 1;
+            background-color: #d00;
+            transition: .3s;
+        }
+
+        .nav-mid>a:hover::before {
+            opacity: 1;
+            height: 100%;
+            z-index: -2;
+        }
+
+
+        .div-one {
+
+            margin: 180px 0 0;
+            height: 900px;
+
+            text-align: center;
+            position: relative;
+
+        }
+
+        .doimg1 {
+            position: absolute;
+            left: 450px;
+            top: 100px;
+            z-index: 0;
+        }
+
+        .doimg2 {
+            position: absolute;
+            right: 340px;
+            top: 300px;
+            z-index: 1;
+        }
+
+        .doimg3 {
+            position: absolute;
+            left: 240px;
+            top: -35px;
+            z-index: 1;
+        }
+
+        .doimg4 {
+            position: relative;
+            top: 500px;
+            right: 90px;
+        }
+
+        .div-one>div {
+            position: relative;
+            left: 800px;
+            bottom: 260px;
+            width: 400px;
+            height: 280px;
+            background-color: #eee;
+            z-index: -1;
+
+        }
+
+
+        .div-two {
+
+            margin: 130px 0 0;
+            height: 900px;
+
+            text-align: center;
+            position: relative;
+
+        }
+
+
+        .dtimg1 {
+            position: absolute;
+            left: 250px;
+
+
+        }
+
+        .dtimg2 {
+            position: absolute;
+            left: 240px;
+            bottom: 670px;
+        }
+
+        .dtimg3 {
+            position: absolute;
+            top: -137px;
+            right: 300px;
+        }
+
+        .dtimg4 {
+            position: absolute;
+            bottom: 320px;
+            right: 300px;
+        }
+
+        .div-two>div {
+            position: relative;
+            right: -550px;
+            bottom: 80px;
+            width: 480px;
+            height: 453px;
+            background-color: #eee;
+            z-index: -1;
+
+        }
+
+        .div-three {
+            margin: -150px 0;
+            height: 900px;
+
+
+            text-align: center;
+            position: relative;
+
+        }
+
+        .dthimg1 {
+            position: absolute;
+            right: 400px;
+            top: 100px;
+        }
+
+        .dthimg2 {
+            position: absolute;
+            right: 390px;
+            top: 330px;
+        }
+
+        .dthimg3 {
+            position: absolute;
+            left: 250px;
+            top: -36px;
+        }
+
+        .dthimg4 {
+            position: absolute;
+            left: 280px;
+            bottom: 125px;
+        }
+
+        .div-three>div {
+            position: relative;
+            left: 780px;
+            bottom: -10px;
+            width: 400px;
+            height: 280px;
+            background-color: #eee;
+            z-index: -1;
+
+        }
+
+        .div-four {
+            margin: 150px 0;
+            height: 900px;
+            text-align: center;
+            position: relative;
+
+        }
+
+        .dfimg1 {
+            position: absolute;
+            top: 135px;
+            left: 270px;
+
+        }
+
+
+        .dfimg2 {
+            position: absolute;
+            left: 260px;
+            top: 330px;
+
+        }
+
+        .dfimg3 {
+            position: absolute;
+            right: 280px;
+        }
+
+        .dfimg4 {
+            position: absolute;
+            bottom: 165px;
+            right: 280px;
+        }
+
+        .div-four>div {
+            position: relative;
+            left: 550px;
+            bottom: -35px;
+            width: 500px;
+            height: 440px;
+            background-color: #eee;
+            z-index: -1;
+        }
+
+        .div-five {
+            margin: -170px 0;
+            height: 700px;
+            text-align: center;
+            position: relative;
+        }
+
+        .dfiimg1 {
+            position: absolute;            
+            left: 440px;
+            top: 137px;
+
+        }
+
+        .dfiimg2{
+            position: absolute;
+            right: 355px;
+            bottom: 330px;
+        }
+
+
+        .dfiimg3{
+            position: absolute;
+            top: 0;
+            left: 265px;
+        }
+
+        .dfiimg4{
+            position: absolute;
+            bottom: -38px;
+            left: 340px;
+        }
+
+        .div-five>div{
+            position: relative;
+            left: 800px;
+            bottom: -40px;
+            width: 400px;
+            height: 280px;
+            background-color: #eee;
+            z-index: -1;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <nav class="nav-top">
+            <a href="">核心理念</a>
+            <a href="">五大優勢</a>
+            <a href="">46 THINGS</a>
+            <a href="">影片演示</a>
+            <a href="">搭仔車款</a>
+
+        </nav>
+    </div>
+
+
+    <h1 class="five-h1">五大優勢 <br> __</h1>
+
+
+    <div>
+
+        <nav class="nav-mid">
+            <a href="#">操控樂趣</a>
+            <a href="#">安全守護</a>
+            <a href="#">乘坐舒適</a>
+            <a href="#">以人為本</a>
+            <a href="#">引以為傲</a>
+        </nav>
+    </div>
+
+
+
+    <div class="div-one">
+        <img class="doimg1" src="toyota_pic/asset 55.png" alt="">
+
+        <img class="doimg2" src="toyota_pic/asset 56.png" alt="">
+
+        <img class="doimg3" src="toyota_pic/asset 57.png" alt="">
+
+        <img class="doimg4" src="toyota_pic/asset 58.png" alt="">
+
+        <div></div>
+
+    </div>
+
+
+
+
+    <div class="div-two">
+        <img class="dtimg1" src="toyota_pic/asset 59.png" alt="">
+
+        <img class="dtimg2" src="toyota_pic/asset 56.png" alt="">
+
+        <img class="dtimg3" src="toyota_pic/asset 60.png" alt="">
+
+        <img class="dtimg4" src="toyota_pic/asset 61.png" alt="">
+
+        <div></div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="div-three">
+        <img class="dthimg1" src="toyota_pic/asset 62.png" alt="">
+
+        <img class="dthimg2" src="toyota_pic/asset 56.png" alt="">
+
+        <img class="dthimg3" src="toyota_pic/asset 63.png" alt="">
+
+        <img class="dthimg4" src="toyota_pic/asset 64.png" alt="">
+
+        <div></div>
+
+
+
+
+    </div>
+
+
+
+
+
+    <div class="div-four">
+        <img class="dfimg1" src="toyota_pic/asset 65.png" alt="">
+
+        <img class="dfimg2" src="toyota_pic/asset 56.png" alt="">
+
+        <img class="dfimg3" src="toyota_pic/asset 66.png" alt="">
+
+        <img class="dfimg4" src="toyota_pic/asset 67.png" alt="">
+
+        <div></div>
+
+
+
+
+    </div>
+
+
+    <div class="div-five">
+        <img class="dfiimg1" src="toyota_pic/asset 68.png" alt="">
+
+        <img class="dfiimg2" src="toyota_pic/asset 56.png" alt="">
+
+        <img class="dfiimg3" src="toyota_pic/asset 69.png" alt="">
+
+        <img class="dfiimg4" src="toyota_pic/asset 70.png" alt="">
+
+        <div></div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
