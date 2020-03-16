@@ -11,9 +11,7 @@
     z-index: 12;
     border-bottom: 2px solid #ccc;
     height: 60px;
-    display: flex;
-  
-   
+    display: flex;   
 }
 
 .header>h5{
@@ -37,7 +35,7 @@
     font-family: sans-serif;
     padding: 20px 0;
     transition: .3s;
-    cursor: pointer;
+   
 }
 
 
@@ -123,9 +121,7 @@
     border: 1px;
 }
 
-.div-one-h2{
-    font-family:sans-serif;
-}
+
 
 .div-one-h>button:hover{
     background-color: #ffee00;
@@ -137,6 +133,7 @@
 
 .div-one-h>h2{
     color: #ffee00;
+    font-family:sans-serif;
 
 }
 
