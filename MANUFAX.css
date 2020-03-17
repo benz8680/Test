@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.NavTop{
+    background-color: #333;
+    text-align: center;
+   
+}
+
+.NavTop a{
+  font-family: sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+}
+
+.NavMain{
+    position: relative;
+}
+
+
+.NavMain a{
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    left: 38%;
+    padding: 10px 10px;
+}
+
