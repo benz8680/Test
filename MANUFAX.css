@@ -179,8 +179,7 @@
 }
 
 .serviceItem{
- 
-    
+   
     height: 250px;
     width: 300px;
     margin: 20px 60px;
@@ -189,6 +188,11 @@
 .serviceItem h2{
     padding: 0 0 20px;
     font-size: 18px;
+}
+
+.serviceItem p{
+    font-weight: lighter;
+    color: #666;
 }
 
 .history{
@@ -204,7 +208,7 @@ width: 50%;
 
 .historyText{
     
-    font-family: sans-serif;
+   font-family: sans-serif;
    align-self: center;
    margin: 20px 20px;
     
@@ -220,14 +224,38 @@ width: 50%;
 }
 
 .historyText h1{
-    padding: 20px 0;
+    padding: 50px 50px 30px;
     
 }
 
 .historyText h2{
-    padding: 20px 0;
+    padding: 20px 50px 20px;
     font-size: 18px;
     font-weight: lighter;
+    color: #444;
+}
+
+.historyText p{
+    padding: 0 50px 50px;
+    color: #666;
+}
+
+.historyText a{
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    display: inline-block;
+    margin: 10px 50px 0px;
+    width: 180px;
+    height: 50px;
+    text-decoration: none;
+    background-color: #2ac5f4;
+    
+   
+}
+
+.historyText a:hover{
+    background-color: #000;
 }
 
 .buildingPic{
