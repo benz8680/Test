@@ -32,7 +32,7 @@
 
 .banner{
     
-    background: url(MANUFAX_pic/asset\ 1.png) center center  ;
+    background: url(MANUFAX_pic/asset\ 1-dark.jpg) center center  ;
     position: relative;
     width: 100%;
     height: 800px;
@@ -41,7 +41,7 @@
 
 
 /* 在banner前面加個半透明黑色史背景突變暗 */
-.banner::before{
+/* .banner::before{
     content: ''; 
     display: block; 
     position: absolute; 
@@ -49,7 +49,7 @@
     opacity: 0.6; 
     width: 100%; 
     height: 100%;
-}
+} */
 
 .header{
     width: 100%;
