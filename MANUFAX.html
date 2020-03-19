@@ -7,11 +7,127 @@
     <title>MANUFAX</title>
     <link rel="stylesheet" href="MANUFAX.css">
     <style>
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 992px) {
+
+            .history {
+                width: auto;
+                height: 100%;
+                background-color: #ddd;
+                display: flex;
+
+            }
+
+
+
+
+
+            .img {
+
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+
+            }
+
+
+
+
+
+
             .recentNews {
                 color: #777;
                 font-family: sans-serif;
-                width: 1400px;
+                width: auto;
+                margin: 30px auto 80px;
+            }
+
+
+
+
+
+            .footer {
+
+                font-family: sans-serif;
+                font-weight: lighter;
+                margin-top: 100px;
+                background-color: #333;
+                width: auto;
+                height: 500px;
+                display: flex;
+                justify-content: center;
+                padding: 100px 0 0 50px;
+
+
+            }
+
+            .footerItems {
+
+                width: 23.046875%;
+                margin: 10px 0.9765625%;
+
+
+
+            }
+
+            .bottom{
+                width: auto;
+            }
+
+
+        }
+
+        @media screen and (min-width: 1200px) {
+
+
+            .history {
+                width: auto;
+                height: 100%;
+                background-color: #ddd;
+                display: flex;
+
+            }
+
+            .historyText,
+            .img {
+                width: 50%;
+                height: 50%;
+
+            }
+
+
+            .historyText {
+               
+
+
+                font-family: sans-serif;
+            
+
+
+            }
+
+            .img img{
+                
+               
+            }
+
+            .img{
+                padding: 30px;
+                display: inline-block;
+               
+
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+
+
+            .recentNews {
+                color: #777;
+                font-family: sans-serif;
+                width: auto;
                 display: flex;
                 margin: 30px auto 80px;
             }
@@ -24,13 +140,25 @@
                 height: 680px;
             }
 
+            .buildingPic div {
+                width: 25%;
+                font-size: 20px;
+                font-family: sans-serif;
+                color: #ddd;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+            }
+
             .footer {
 
                 font-family: sans-serif;
                 font-weight: lighter;
                 margin-top: 100px;
                 background-color: #333;
-                width: 100%;
+                width: auto;
                 height: 500px;
                 display: flex;
                 justify-content: center;
@@ -49,6 +177,12 @@
 
 
             }
+
+            .bottom{
+                width: auto;
+            }
+
+           
 
 
 
@@ -160,8 +294,12 @@
             <a href="">READ MORE</a>
 
         </div>
+        <div class="img">
+            <img src="MANUFAX_pic/asset 4.png" alt="">
 
-        <img src="MANUFAX_pic/asset 4.png" alt="">
+        </div>
+
+        
 
     </div>
 
@@ -169,7 +307,7 @@
 
     <div class="buildingPic">
         <div class="COMMERCIAL">COMMERCIAL</div>
-        <div class="LIFESTYLE">.CULTURAL / LIFESTYLE</div>
+        <div class="LIFESTYLE">CULTURAL / LIFESTYLE</div>
         <div class="TECHNOLOGY">DATA / TECHNOLOGY</div>
         <div class="EDUCATIONAL">EDUCATIONAL</div>
         <div class="MILITARY">GOVERNMENT / MILITARY</div>

@@ -59,6 +59,7 @@
     position: absolute;
     top: 0;; 
     display: flex; 
+    
    
 }
 
@@ -70,7 +71,8 @@
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    color: #fff;   
+    color: #fff;  
+    
 }
 
 
@@ -198,30 +200,34 @@
 }
 
 .history{
-    height: 680px;
+    width: auto;
+    height: 100%;
     background-color: #ddd;
-    display: flex;
+    width: 100%;
     padding: 0 100px;
 }
 
 .historyText, .history img{
-width: 50%;
+width: 100%;
 }
 
 .historyText{
     
+  
    font-family: sans-serif;
-   align-self: center;
+
+
    margin: 20px 20px;
-    
+  
 
 }
 
 .history img{
-   
-    padding: 95px 20px 60px 0;
-    width: 647px;
-    height: 487px;
+  
+    width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
   
 }
 
@@ -482,6 +488,10 @@ width: 50%;
     font-weight: lighter;
 }
 
+
+
+
+
 /* .back-to-top{
     text-decoration: none;
     color: #2ac5f4;
@@ -502,7 +512,7 @@ width: 50%;
 /* -------------------------------3D翻轉測試------------------------------- */
 
 
-
+/* 
 .building3D{
     display: flex;
     width: 100%;
@@ -523,11 +533,10 @@ width: 50%;
     width: 25%;
     height: 350px;
     perspective: 1000px; 
-    
-    /* Remove this if you don't want the 3D effect */
+  
   }
   
-  /* This container is needed to position the front and back side */
+ 
   .flip-box-inner {
     position: relative;
     width: 100%;
@@ -537,30 +546,30 @@ width: 50%;
     transform-style: preserve-3d;
   }
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
+ 
   .flip-box:hover .flip-box-inner {
     transform: rotateY(180deg);
   }
   
-  /* Position the front and back side */
+
   .flip-box-front, .flip-box-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
   }
   
-  /* Style the front side (fallback if image is missing) */
+ 
   .flip-box-front {
     background-color: #bbb;
     color: black;
   }
   
-  /* Style the back side */
+  
   .flip-box-back {
    background-image: url(MANUFAX_pic/asset\ 9.jpeg) ;
    background-size: 480px 350px ;
     color: #000;
     transform: rotateY(180deg);
-  }
+  } */
