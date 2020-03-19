@@ -4,6 +4,11 @@
     list-style: none;
 }
 
+
+
+
+
+
 .navTop{
     background-color: #333;
     opacity: 1;
@@ -199,54 +204,11 @@
     color: #666;
 }
 
-.history{
-    width: auto;
-    height: 100%;
-    background-color: #ddd;
-    width: 100%;
-    padding: 0 100px;
-}
-
-.historyText, .history img{
-width: 100%;
-}
-
-.historyText{
-    
-  
-   font-family: sans-serif;
 
 
-   margin: 20px 20px;
-  
 
-}
 
-.history img{
-  
-    width: auto;
-	height: auto;
-	max-width: 100%;
-	max-height: 100%;
-  
-}
 
-.historyText h1{
-    padding: 50px 50px 30px;
-    
-}
-
-.historyText h2{
-    padding: 20px 50px 20px;
-    font-size: 18px;
-    font-weight: lighter;
-    color: #444;
-}
-
-.historyText p{
-    padding: 0 50px 50px;
-    color: #666;
-}
 
 .historyText a{
     text-align: center;
@@ -267,77 +229,108 @@ width: 100%;
 }
 
 
-.buildingPic{
-   display: block;
+
+
+.readMore{
+    margin: 60px 0  0;        
+    display: block;
+   padding: 20px 0 26px;
+    text-decoration: none;
+    color: #eeeeee;
+    background-color:  #2ac5f4;
+    width: 160px;
+    height: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.readMore:hover{
+    background-color: #000;
+}
+
+.Servicecontainer {
+    width: 100%;  
+  
+    
+   
+
+}
+
+.row {
     display: flex;
-    width: 100%;
-    flex-wrap: wrap;   
-    height: 680px;
+    flex-wrap: wrap;
 }
 
-.buildingPic div{
-    width: 25%;
-    font-size: 20px;
-    font-family: sans-serif;
-    color: #ddd;
-    text-align: center; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-
-}
-
-.COMMERCIAL{
-    background-image: url(MANUFAX_pic/asset\ 9.jpeg) ;
-    background-size:  480px 375px;  
-}
-
-.LIFESTYLE{
-    background-image: url(MANUFAX_pic/asset\ 10.jpeg);
-    background-size:  480px 375px;  
-}
-
-.TECHNOLOGY{
-    background-image: url(MANUFAX_pic/asset\ 11.jpeg);
-    background-size:  480px 375px;  
-
-}
-
-.EDUCATIONAL{
-    background-image: url(MANUFAX_pic/asset\ 12.jpeg);
-    background-size:  480px 375px;  
-}
-
-.MILITARY{
-    background-image: url(MANUFAX_pic/asset\ 13.jpeg);
-    background-size:  480px 375px;  
-
-}
-
-.HEALTHCARE{
-    background-image: url(MANUFAX_pic/asset\ 14.jpeg);
-    background-size:  480px 375px;  
-
-}
-
-.INDUSTRIAL{
-    background-image: url(MANUFAX_pic/asset\ 15.jpeg);
-    background-size:  480px 375px;
-}
-
-.LOGISTICS{
-    background-image: url(MANUFAX_pic/asset\ 16.jpeg);
-    background-size:  480px 375px;
-}
-
-
-
-.buildingPic img{
- 
-   width: 25%;
-   height: 320px;
+div[class*='col'] {
+    box-sizing: border-box;
    
 }
+
+.item{
+    width: 100%;
+}
+.item img{
+    width: 100%;
+    height: 370px;
+    vertical-align: top;
+    padding-left: 0;
+}
+
+.historycontainer img{
+    width: 100%;
+
+}
+.historycontainer {
+    width: auto;
+    background-color: #ccc;
+    margin: 50px 0 0;
+    padding: 30px 80px 0;
+   
+}
+
+
+
+
+
+.historycontainer .text{
+    margin: 0 auto;
+    padding: 50px 0;
+    font-family: sans-serif
+                
+}
+
+.historycontainer .text h2::before{
+    content: '';
+    border-top: 2px solid #2ac5f4;
+    position: absolute;
+    top: -50px;
+    width: 80px;;
+
+    
+}
+
+.historycontainer .text h2{
+    font-size: 30px;
+    padding: 0px 0 50px;
+    position: relative;
+    
+}
+
+.historycontainer .text h3{
+    font-weight: lighter;
+    padding: 0px 0 30px;
+}
+
+.historycontainer .text p{
+    color: #555;
+}
+
+.historycontainer img{
+    vertical-align: bottom;
+    width: 100%;
+}
+
+
 
 
 .recentHeader{
@@ -347,12 +340,6 @@ width: 100%;
     
 }
 
-.recentNews{
-   
-  
-    
-  
-}
 
 .recentNews h1{
     color: #222222;
@@ -378,6 +365,7 @@ width: 100%;
    vertical-align: top;
     width: 100%;
 }
+
 
 
 
@@ -412,29 +400,7 @@ width: 100%;
     background-color: #000;
 }
 
-.footer{
-    
-    font-family: sans-serif;
-    font-weight: lighter;
-    margin-top: 100px;
-    background-color: #333;
-    width: 100%;
-    height: 100%; 
-    padding: 100px  0  0 50px;
-   
-    
-}
 
-.footerItems{
-   
-  
-    width: 300px;
-    padding: 0 0px;
-    margin: 0 50px;
-    
-   
-
-}
 
 
 .footerItems li, .footerItems a{
@@ -445,6 +411,20 @@ width: 100%;
     
    
     
+}
+
+.footer {
+
+    font-family: sans-serif;
+    font-weight: lighter;
+    margin-top: 100px;
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    
+    padding: 100px 0 0 50px;
+
+
 }
 
 
@@ -467,12 +447,10 @@ width: 100%;
     color: #2ac5f4;
 }
 
-
-
 .bottom{
  
     background-color: #222;
-    width: 100%;
+    width: auto;
     height: 40px;
     font-size: 15px;
     padding-left: 100px;
@@ -481,24 +459,11 @@ width: 100%;
     font-family: sans-serif;
     font-weight: lighter;
 }
-
 .Zemez{
     text-decoration: none;
     color: #2ac5f4;
     font-weight: lighter;
-}
-
-
-
-
-
-/* .back-to-top{
-    text-decoration: none;
-    color: #2ac5f4;
-    position: relative;
-    left: 1000px;
-    
-} */
+    }
 
 
 
@@ -509,67 +474,10 @@ width: 100%;
 
 
 
-/* -------------------------------3D翻轉測試------------------------------- */
 
 
-/* 
-.building3D{
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-   
-}
 
 
-.flip-box-front{
-    background-image: url(MANUFAX_pic/asset\ 9.jpeg);
-    background-size: 480px 350px;
-   
-}
 
 
-.flip-box {
-    background-color: transparent;
-    width: 25%;
-    height: 350px;
-    perspective: 1000px; 
-  
-  }
-  
- 
-  .flip-box-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 1s;
-    transform-style: preserve-3d;
-  }
-  
- 
-  .flip-box:hover .flip-box-inner {
-    transform: rotateY(180deg);
-  }
-  
 
-  .flip-box-front, .flip-box-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; 
-    backface-visibility: hidden;
-  }
-  
- 
-  .flip-box-front {
-    background-color: #bbb;
-    color: black;
-  }
-  
-  
-  .flip-box-back {
-   background-image: url(MANUFAX_pic/asset\ 9.jpeg) ;
-   background-size: 480px 350px ;
-    color: #000;
-    transform: rotateY(180deg);
-  } */

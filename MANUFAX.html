@@ -7,31 +7,207 @@
     <title>MANUFAX</title>
     <link rel="stylesheet" href="MANUFAX.css">
     <style>
+
+        @media screen and (min-width: 768px) {
+            .col-md-l { width: 8.3333333%;}
+            .col-md-2 { width: 16.666666%;}
+            /* 4欄 */
+            .col-md-3 { width: 25%;}
+            /* 3欄 */
+            .col-md-4 { width: 33.333333%;}
+            .col-md-5 { width: 41.666666%; }
+            /* 兩欄 */
+            .col-md-6  { width: 50%; }
+            .col-md-7  { width: 58.333333%;}
+            .col-md-8  { width: 66.666666%;}
+            .col-md-9  { width: 75%;}
+            .col-md-10 { width: 83.333333%;}
+            .col-md-11 { width: 91.666666%;}
+            /* 1欄位 */
+            .col-md-12 { width: 100%;}
+
+            .historycontainer img{
+                width: 100%;
+
+            }
+            .historycontainer {
+                width: auto;
+                background-color: #ccc;
+                margin: 50px 0 0;
+                padding: 30px 80px 0;
+               
+            }
+
+           
+
+
+            
+            .historycontainer .text{
+                margin: 0 70px;
+                padding: 90px 0;
+                font-family: sans-serif
+                            
+            }
+
+            .historycontainer .text h2::before{
+                content: '';
+                border-top: 2px solid #2ac5f4;
+                position: absolute;
+                top: -50px;
+                width: 80px;;
+            
+                
+            }
+
+            .historycontainer .text h2{
+                font-size: 30px;
+                padding: 0px 0 50px;
+                position: relative;
+                
+            }
+
+            .historycontainer .text h3{
+                font-weight: lighter;
+                padding: 0px 0 30px;
+            }
+
+            .historycontainer .text p{
+                color: #555;
+            }
+
+            .historycontainer img{
+                vertical-align: bottom;
+                width: 100%;
+        }
+
+                
+        .readMore{
+            margin: 60px 0  0;        
+            display: block;
+           padding: 20px 0 26px;
+            text-decoration: none;
+            color: #eeeeee;
+            background-color:  #2ac5f4;
+            width: 160px;
+            height: 10px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .readMore:hover{
+            background-color: #000;
+        }
+
+            
+        }
+
+
+
+
+
         @media screen and (min-width: 992px) {
 
-            .history {
+
+            .col-lg-l { width: 8.3333333%;}
+            .col-lg-2 { width: 16.666666%;}
+            /* 4欄 */
+            .col-lg-3 { width: 25%;}
+            /* 3欄 */
+            .col-lg-4 { width: 33.333333%;}
+            .col-lg-5 { width: 41.666666%; }
+            /* 兩欄 */
+            .col-lg-6  { width: 50%; }
+            .col-lg-7  { width: 58.333333%;}
+            .col-lg-8  { width: 66.666666%;}
+            .col-lg-9  { width: 75%;}
+            .col-lg-10 { width: 83.333333%;}
+            .col-lg-11 { width: 91.666666%;}
+            /* 1欄位 */
+            .col-lg-12 { width: 100%;}
+
+            .historycontainer {
                 width: auto;
-                height: 100%;
-                background-color: #ddd;
-                display: flex;
-
+                background-color: #ccc;
+                margin: 50px 0 0;
+                padding: 30px 80px 0;
+               
             }
+            
+                    
+                    .historyimg {
+                    
+                    order: 2;
+                }
 
 
+                    .historycontainer img{
+                        width: 100%;
 
+                    }
 
+                        .historycontainer {
+                    width: auto;
+                    background-color: #ccc;
+                    margin: 50px 0 0;
+                    padding: 30px 80px 0;
+                
+                }
 
-            .img {
+                    .historycontainer .text{
+                        margin: 0 70px;
+                        padding: 90px 0;
+                        font-family: sans-serif
+                                    
+                    }
 
-                width: auto;
-                height: auto;
-                max-width: 100%;
-                max-height: 100%;
+                    .historycontainer .text h2::before{
+                        content: '';
+                        border-top: 2px solid #2ac5f4;
+                        position: absolute;
+                        top: -50px;
+                        width: 80px;;
+                    
+                        
+                    }
 
-            }
+                    .historycontainer .text h2{
+                        font-size: 30px;
+                        padding: 0px 0 50px;
+                        position: relative;
+                        
+                    }
 
+                    .historycontainer .text h3{
+                        font-weight: lighter;
+                        padding: 0px 0 30px;
+                    }
 
+                    .historycontainer .text p{
+                        color: #555;
+                    }
 
+                    .historycontainer img{
+                        vertical-align: bottom;
+                       width: 100%;
+                }
+
+                
+        .readMore{
+            margin: 60px 0  0;        
+            display: block;
+           padding: 20px 0 26px;
+            text-decoration: none;
+            color: #eeeeee;
+            background-color:  #2ac5f4;
+            width: 160px;
+            height: 10px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .readMore:hover{
+            background-color: #000;
+        }
 
 
 
@@ -41,8 +217,6 @@
                 width: auto;
                 margin: 30px auto 80px;
             }
-
-
 
 
 
@@ -66,8 +240,6 @@
                 width: 23.046875%;
                 margin: 10px 0.9765625%;
 
-
-
             }
 
             .bottom{
@@ -77,52 +249,101 @@
 
         }
 
+
+
+      
         @media screen and (min-width: 1200px) {
 
 
-            .history {
+            .col-xl-l { width: 8.3333333%;}
+            .col-xl-2 { width: 16.666666%;}
+            /* 4欄 */
+            .col-xl-3 { width: 25%;}
+            /* 3欄 */
+            .col-xl-4 { width: 33.333333%;}
+            .col-xl-5 { width: 41.666666%; }
+            /* 兩欄 */
+            .col-xl-6  { width: 50%; }
+            .col-xl-7  { width: 58.333333%;}
+            .col-xl-8  { width: 66.666666%;}
+            .col-xl-9  { width: 75%;}
+            .col-xl-10 { width: 83.333333%;}
+            .col-xl-11 { width: 91.666666%;}
+            /* 1欄位 */
+            .col-xl-12 { width: 100%;}
+
+        
+
+            .historycontainer {
                 width: auto;
-                height: 100%;
-                background-color: #ddd;
-                display: flex;
-
-            }
-
-            .historyText,
-            .img {
-                width: 50%;
-                height: 50%;
-
-            }
-
-
-            .historyText {
+                background-color: #ccc;
+                margin: 50px 0 0;
+                padding: 30px 80px 0;
+                height: 580px;
                
+            }
 
+            .historycontainer .text{
+                margin: 0 70px;
+                padding: 90px 0;
+                font-family: sans-serif
+                          
+            }
 
-                font-family: sans-serif;
+            .historycontainer .text h2::before{
+                content: '';
+                border-top: 2px solid #2ac5f4;
+                position: absolute;
+                top: -50px;
+                width: 80px;;
             
-
-
-            }
-
-            .img img{
                 
+            }
+
+            .historycontainer .text h2{
+                font-size: 30px;
+                padding: 0px 0 50px;
+                position: relative;
                
             }
 
-            .img{
-                padding: 30px;
-                display: inline-block;
-               
-
-                width: auto;
-                height: auto;
-                max-width: 100%;
-                max-height: 100%;
+            .historycontainer .text h3{
+                font-weight: lighter;
+                padding: 0px 0 30px;
             }
 
+            .historycontainer .text p{
+                color: #555;
+            }
 
+          
+            .historycontainer img{
+                vertical-align: bottom;
+            width: 100%;
+        }
+
+
+        .historyimg {
+           
+            order: 2;
+        }
+
+        .readMore{
+            margin: 60px 0  0;        
+            display: block;
+           padding: 20px 0 26px;
+            text-decoration: none;
+            color: #eeeeee;
+            background-color:  #2ac5f4;
+            width: 160px;
+            height: 10px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .readMore:hover{
+            background-color: #000;
+        }
 
             .recentNews {
                 color: #777;
@@ -132,25 +353,6 @@
                 margin: 30px auto 80px;
             }
 
-            .buildingPic {
-                display: block;
-                display: flex;
-                width: 100%;
-                flex-wrap: wrap;
-                height: 680px;
-            }
-
-            .buildingPic div {
-                width: 25%;
-                font-size: 20px;
-                font-family: sans-serif;
-                color: #ddd;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-
-            }
 
             .footer {
 
@@ -159,7 +361,7 @@
                 margin-top: 100px;
                 background-color: #333;
                 width: auto;
-                height: 500px;
+                height: 450px;
                 display: flex;
                 justify-content: center;
                 padding: 100px 0 0 50px;
@@ -179,9 +381,23 @@
             }
 
             .bottom{
+ 
+                background-color: #222;
                 width: auto;
+                height: 40px;
+                font-size: 15px;
+                padding-left: 100px;
+                padding-top: 18px;
+                color: #888;
+                font-family: sans-serif;
+                font-weight: lighter;
             }
 
+                .Zemez{
+                text-decoration: none;
+                color: #2ac5f4;
+                font-weight: lighter;
+                }
            
 
 
@@ -278,42 +494,77 @@
 
 
 
-    <div class="history">
+    <div class="historycontainer">
+        <div class="row">
+            
+                <div class="historyimg col-xl-6 col-lg-6 col-md-12">
+                    <img src="MANUFAX_pic/asset 4.png">
 
-        <div class="historyText">
-            <h1>OUR HISTORY</h1>
+            
+            
 
-            <h2>OUR CONSTRUCTION COMPANY HAS BEEN FOUNDED 10 YEARS AGO, AT THE VERY PEAK OF THE BUILDING FRENZY IN THE
-                US…</h2>
+            </div>
+            <div class="historytext col-xl-6 col-lg-6 col-md-12">
+                <div class=" text">
+                    <h2>OUR HISTORY</h2>
+                    <h3>OUR CONSTRUCTION COMPANY HAS BEEN FOUNDED 10 YEARS AGO, AT THE VERY PEAK OF THE BUILDING FRENZY
+                        IN THE US…</h3>
+                    <p>Since then we’ve built hundreds of commercial, government and private buildings and facilities.
+                        It may not sound like a lot, but if you estimate the manpower, working hours, materials,
+                        planning and correlating that were all involved in completing each separate project, then our
+                        productivity is immense!</p>
+                        <a class="readMore" href="">READ MORE</a>
 
-            <p>Since then we’ve built hundreds of commercial, government and private buildings and facilities. It may
-                not sound like a lot, but if you estimate the manpower, working hours, materials, planning and
-                correlating that were all involved in completing each separate project, then our productivity is
-                immense!</p>
+                </div>
 
-            <a href="">READ MORE</a>
-
+            </div>
         </div>
-        <div class="img">
-            <img src="MANUFAX_pic/asset 4.png" alt="">
+</div>
 
+
+    <div class="Servicecontainer">
+        <div class="row">
+            <div class="col-xl-3  col-lg-6  col-md-12">
+                <div class="item">
+                    <img src="MANUFAX_pic/asset 9.jpeg">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-12">
+                <div class="item">
+                    <img src="MANUFAX_pic/asset 10.jpeg">
+                </div>
+            </div>
+            <div class="col-xl-3  col-lg-6 col-md-12">
+                <div class="item">
+                    <img src="MANUFAX_pic/asset 11.jpeg">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-12">
+                <div class="item">
+                    <img src="MANUFAX_pic/asset 12.jpeg">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-12">
+                <div class="item">
+                    <img src="MANUFAX_pic/asset 13.jpeg">
+                </div>
+            </div>
+            <div class="col-xl-3  col-lg-6 col-md-12">
+                <div class="item">
+                    <img src="MANUFAX_pic/asset 14.jpeg">
+                </div>
+            </div>
+            <div class="col-xl-3  col-lg-6 col-md-12">
+                <div class="item">
+                    <img src="MANUFAX_pic/asset 15.jpeg">
+                </div>
+            </div>
+            <div class="col-xl-3  col-lg-6 col-md-12">
+                <div class="item">
+                    <img src="MANUFAX_pic/asset 16.jpeg">
+                </div>
+            </div>
         </div>
-
-        
-
-    </div>
-
-
-
-    <div class="buildingPic">
-        <div class="COMMERCIAL">COMMERCIAL</div>
-        <div class="LIFESTYLE">CULTURAL / LIFESTYLE</div>
-        <div class="TECHNOLOGY">DATA / TECHNOLOGY</div>
-        <div class="EDUCATIONAL">EDUCATIONAL</div>
-        <div class="MILITARY">GOVERNMENT / MILITARY</div>
-        <div class="HEALTHCARE">HEALTHCARE</div>
-        <div class="INDUSTRIAL">MANUFACTURING / INDUSTRIAL</div>
-        <div class="LOGISTICS">WAREHOUSE / LOGISTICS</div>
     </div>
 
     <div class="recentHeader">
@@ -414,94 +665,7 @@
 </body>
 
 </html>
-<!-- <a href="#" class="back-to-top">︽</a> -->
 
 
 
 
-
-<!-- ----------------------------3D翻轉測試------------------------------->
-
-
-<!-- <div class="building3D">
-
-        <div class="flip-box">
-            <div class="flip-box-inner">
-                <div class="flip-box-front">
-                    <h2>HII</h2>
-                </div>
-                <div class="flip-box-back">
-                    <h2>Paris</h2>
-                    <p>What an amazing city</p>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="flip-box">
-            <div class="flip-box-inner">
-                <div class="flip-box-front">
-                    <h2>HII</h2>
-                </div>
-                <div class="flip-box-back">
-                    <h2>Paris</h2>
-                    <p>What an amazing city</p>
-
-                </div>
-            </div>
-        </div>
-
-
-        <div class="flip-box">
-            <div class="flip-box-inner">
-                <div class="flip-box-front">
-                    <h2>HII</h2>
-                </div>
-                <div class="flip-box-back">
-                    <h2>Paris</h2>
-                    <p>What an amazing city</p>
-
-                </div>
-            </div>
-        </div>
-
-
-        <div class="flip-box">
-            <div class="flip-box-inner">
-                <div class="flip-box-front">
-                    <h2>HII</h2>
-                </div>
-                <div class="flip-box-back">
-                    <h2>Paris</h2>
-                    <p>What an amazing city</p>
-
-                </div>
-            </div>
-        </div>
-
-
-        <div class="flip-box">
-            <div class="flip-box-inner">
-                <div class="flip-box-front">
-                    <h2>HII</h2>
-                </div>
-                <div class="flip-box-back">
-                    <h2>Paris</h2>
-                    <p>What an amazing city</p>
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    </div> -->
