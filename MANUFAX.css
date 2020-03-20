@@ -68,22 +68,24 @@
     
 }
 
-
-
-
-
-.banner h1{
-   text-align: center;
-    font-size: 130px;
+.banner h1 {
+    text-align: center;
+    font-size: 50px;
     padding: 10px;
     letter-spacing: 5px;
 }
 
-.banner h2{
+.banner h2 {
     font-weight: lighter;
-    font-size: 33px;
+    font-size: 12.5px;
     letter-spacing: 1px;
 }
+
+
+
+
+
+
 
 
 
