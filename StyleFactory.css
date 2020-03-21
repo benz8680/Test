@@ -114,9 +114,51 @@
 
 
 .hairextensions{
-    margin: 50px 0;
+    margin: 50px auto;
     background-image: url(https://picsum.photos/1200/500?random=1);
     width: 1200px;
-    height: 400px;
+    height: 500px;
     margin: auto;
+    position: relative;
+}
+
+.hairTxt{
+ position: absolute;
+ left:50%;
+ top: 25%;
+ font-family: sans-serif;
+ 
+}
+
+
+.HAIR{
+    font-weight: bold;
+    font-size: 90px;
+    color: #fff;
+}
+
+.EXTENSIONS{
+    font-weight: lighter;
+    font-size: 90px;
+    color: #000;
+    
+}
+
+.hairTxt p{
+    font-size: 30px;
+}
+
+.Readmore{
+    font-size: 15px;
+    font-weight: bolder;
+    width: 120px;
+    height: 38px;
+    background: none;
+    border: 3px solid #000000;
+    transition: .3s;
+}
+
+.Readmore:hover{
+    color: #fff;
+    background-color: #000;
 }
