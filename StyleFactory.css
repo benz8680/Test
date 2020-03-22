@@ -110,10 +110,12 @@
 
 .collectionItems{
     padding: 0 20px;
-    margin: 50px 0 80px;
+    margin: 30px 0 ;
+  
+}
 
-    
-   
+.Collection{
+    margin: 10px auto;
 }
 
 
