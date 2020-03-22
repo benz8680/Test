@@ -64,10 +64,12 @@
 
 .banner{
    height: 800px;
-    background-image: url(https://picsum.photos/1920/800?random=1);
+ 
+    background:url(https://picsum.photos/1920/800?random=1) center center  no-repeat;
+  
     position: relative;
     margin: 0 0 80px;
-    width: auto;
+    width: 100%;
  
     
 }
@@ -107,26 +109,29 @@
 }
 
 .collectionItems{
+    padding: 0 20px;
     margin: 50px 0 80px;
+
+    
    
 }
 
 
 
 .hairextensions{
-    margin: 50px auto;
-    background-image: url(https://picsum.photos/1200/500?random=1);
+    margin: 50px auto 110px;
+    background:url(https://picsum.photos/1200/500?random=1)center center  no-repeat;
     width: 1200px;
     height: 500px;
-    margin: auto;
     position: relative;
 }
 
 .hairTxt{
  position: absolute;
  left:50%;
- top: 25%;
+ top: 18%;
  font-family: sans-serif;
+ width: auto;
  
 }
 
@@ -161,4 +166,389 @@
 .Readmore:hover{
     color: #fff;
     background-color: #000;
+}
+
+.browseTitle{
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+.browseTitle h2{
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 38px;
+    
+
+}
+
+.browse{
+    font-weight: bolder;
+}
+
+.ourCategories{
+    font-weight: lighter;
+}
+
+.hairstyle .item{
+ text-align: center;
+ border: 2px solid #ccc;
+ height: 100%;
+ transition: .3s;
+}
+
+.hairstyle .item:hover{
+    background-color:rgba(255, 192, 203, 0.829);
+}
+
+.hairstyle h3{
+    font-size: 25px;
+    font-weight: bolder;
+    margin: 30px;
+}
+
+.hairstyle input{
+    
+    font-size: 15px;
+    font-weight: bolder;
+    width: 120px;
+    height: 38px;
+    background: none;
+    border: 3px solid #000000;
+    transition: .3s;
+    margin: 0 0 30px;
+}
+
+.hairstyle input:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+.productsTitle{
+    font-family: sans-serif;
+    font-size: 38px;
+    margin: 20px 0;
+    text-align: center;
+}
+.productsTitle h2{
+    display: inline-block;
+   
+}
+
+.products{
+    font-weight: bolder;
+}
+
+.sale{
+    font-weight: lighter;
+}
+
+
+
+.product .item{
+    text-align: center;
+    font-family: sans-serif;
+    border: 1px solid #ccc;
+    height: 100%;
+    transition: .2s;
+    
+}
+
+.product .item:hover{
+    border: 1px solid #000
+}
+
+.productName{
+    font-weight: lighter;
+    font-size: 20px;
+    padding: 0 10px;
+    margin: 20px 0 10px;
+    transition: .3s;
+}
+
+.productName:hover{
+    color: #90caf9;
+    cursor: pointer;
+}
+
+.price{
+    font-weight: bolder;
+    margin:0 0 10px;
+    font-size: 25px;
+}
+
+.price2{
+    font-weight: bolder;
+    color: #999;
+    margin:0 0 10px;
+    font-size: 25px;
+}
+
+
+.product input{
+    font-size: 15px;
+    font-weight: bolder;
+    width: 120px;
+    height: 38px;
+    background: none;
+    border: 3px solid #000000;
+    transition: .3s;
+    margin: 0 0 30px;
+}
+
+.product input:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+.blogTitle{
+    font-size: 38px;
+    margin: 20px 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.blogTitle h2{
+    display: inline-block;
+
+}
+
+.see{
+    font-weight: bolder;
+}
+
+.blog{
+    font-weight: lighter;
+    margin: 0 10px;
+}
+
+
+.itemBlog{
+    text-align: center;
+    font-family: sans-serif;
+}
+.itemBlog h3{
+    font-weight: bold;
+}
+
+.itemBlog h4{
+    margin: 20px 0 ;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.itemBlog input{
+    font-size: 15px;
+    font-weight: bolder;
+    width: 120px;
+    height: 38px;
+    background: none;
+    border: 3px solid #000000;
+    transition: .3s;
+    margin: 0 0 30px;
+}
+
+.itemBlog input:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.lorem{
+    margin: 0 0 50px;
+}
+
+.featuredTitle{
+   margin: 20px 0;
+   text-align: center;
+   font-family: sans-serif;
+}
+
+.featuredTitle h2{
+    display: inline-block;
+}
+
+.feature{
+    font-weight: bolder;
+}
+
+.products2{
+    font-weight: lighter;
+}
+
+.grayPrice{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.grayPrice h3{
+    margin: 0 5px;
+}
+
+.gray{
+    color: #999;
+}
+
+.followTitle{
+    margin: 20px 0 80px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.followTitle h2{
+    display: inline-block;
+}
+
+.fallow{
+    font-weight: bolder;
+}
+
+.ig{
+    font-weight: lighter;
+    padding: 0 5px;
+}
+
+.offers{
+    width: auto;
+    height: 450px;
+    background-color: #73b0e236;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.offers h4{
+    font-weight: bold;
+    margin: 20px;
+}
+
+.offers h3{
+    font-size: 22px;
+    font-weight: lighter;
+    margin: 0 0 20px;
+}
+
+.control{
+    margin: 0 0 50px;
+    flex-wrap: wrap;
+}
+.email{
+    width: 400px;
+}
+
+.sub{
+    font-size: 15px;
+    font-weight: bolder;
+    width: 110px;
+    height: 38px;
+    background: none;
+    border: 3px solid #000000;
+    transition: .3s;
+    margin: 0 10px ;
+
+}
+
+
+.sub:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+
+.footer{
+    width: 100%;
+    background-color: #243238;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.footer h1{
+    margin: 0 0 25px;
+    font-size: 30px;
+
+  
+}
+
+.footer h3{
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 0 0 25px;
+}
+
+.container{
+    padding: 80px 0 ;
+}
+
+.footerItem{
+    margin: 0 0 25px;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+    font-weight: lighter;
+}
+
+.footer a:hover{
+    color: #90caf9;
+}
+
+.footerItem{
+    padding: 0 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:767px){
+
+    .hairextensions{
+        text-align: center;
+        
+    }
+
+   
+    .hairTxt{      
+        position: relative;
+        left:0;
+        right: 0;
+        font-family: sans-serif;
+    }
+    .HAIR{
+        font-size: 70px;
+    } 
+
+    .EXTENSIONS{
+        font-size: 70px;
+    }
+
+    .hairTxt p{
+        font-size: 20px
+    }
+        
+       
+    .product .item {
+        display: flex;
+        width: 100%;
+    }
+
+    .productTxt{
+        margin: 0 auto;
+    }
+
+   
+    
+       
 }
