@@ -16,16 +16,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif Arial, Helvetica, sans-serif;
     height: 100px;
     background-color: #fff;
     margin: 20px 0;
 }
 
-.styleFactory h1{
-    font-size: 50px;
-    font-weight: bolder;
-}
+
 
 .navBar{
     display: flex;
@@ -473,9 +469,9 @@
     font-family: sans-serif;
 }
 
-.footer h1{
+.footer img{
     margin: 0 0 25px;
-    font-size: 30px;
+   
 
   
 }
@@ -571,7 +567,7 @@
     }
 
     .itemBlog{
-        margin : auto 50px;
+        margin : 20px 50px;
     }
 
    
