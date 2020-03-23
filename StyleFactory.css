@@ -43,13 +43,21 @@
     height: 80px;
 }
 
+.navBar ul{
+    margin: auto 0 0;
+}
+
 .navBar a{
     text-decoration: none;
     color: #000000;
     transition: .3s;
 }
 
-.navBar a + a::before{
+.navBar li{
+    display: inline;
+}
+
+.navBar li + li::before{
     content: '/';
     padding: 0 20px;
 }
