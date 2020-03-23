@@ -73,7 +73,7 @@
 .banner{
    height: 800px;
  
-    background:url(https://picsum.photos/1920/800?random=1) center center  no-repeat;
+    background:url(Style_pic/asset\ 1.jpeg) center center  ;
   
     position: relative;
     margin: 0 0 80px;
@@ -130,7 +130,7 @@
 
 .hairextensions{
     margin: 50px auto 110px;
-    background:url(https://picsum.photos/1200/500?random=1)center center  no-repeat;
+    background:url(Style_pic/asset\ 2.jpeg)center center  no-repeat;
     width: 1200px;
     height: 500px;
     position: relative;
@@ -556,6 +556,22 @@
 
     .productTxt{
         margin: 0 auto;
+    }
+
+    .hairstyle .item{
+        margin : auto 50px;
+      
+    }
+
+    .product .item {
+       
+      
+        width: auto;
+        padding: 0 70px;
+    }
+
+    .itemBlog{
+        margin : auto 50px;
     }
 
    
