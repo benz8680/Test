@@ -55,7 +55,7 @@
 
 .navBar li + li::before{
     content: '/';
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .navBar a:hover{
@@ -538,9 +538,19 @@
    
 }
 
-.bottom p{
-    
+.bottom p{  
+    color: #ccc;
     margin-left: 12%;
+}
+
+.bottom a{
+    color: #fff;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.bottom a:hover{
+    color: #90caf9;
 }
 
 
@@ -651,6 +661,19 @@
         height: 60px;
     }
 
+    .hairextensions{
+        text-align: center;
+        
+    }
+
+
+    .hairTxt{      
+        position: relative;
+        left:0;
+        right: 0;
+        font-family: sans-serif;
+    }
+
 
    
 }
@@ -666,5 +689,12 @@
         font-size: 20px;   
     height: 80px;
     width: 200px;
+    }
+
+    .hairTxt{      
+        position: relative;
+        left:50%;
+        right: 0;
+        font-family: sans-serif;
     }
 }
