@@ -157,6 +157,8 @@
     position: relative;
 }
 
+
+
 .hairTxt{
  position: absolute;
  left:50%;
@@ -661,14 +663,14 @@
         height: 60px;
     }
 
-    .hairextensions{
+    /* .hairextensions{
         text-align: center;
         
-    }
+    } */
 
 
     .hairTxt{      
-        position: relative;
+        position: absolute;
         left:0;
         right: 0;
         font-family: sans-serif;
@@ -690,9 +692,16 @@
     height: 80px;
     width: 200px;
     }
+    
+    .hairextensions{
+        text-align: none;
+        
+    }
 
-    .hairTxt{      
-        position: relative;
+
+    .hairTxt{     
+    
+        position: absolute;
         left:50%;
         right: 0;
         font-family: sans-serif;
