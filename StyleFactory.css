@@ -4,13 +4,8 @@
     list-style: none;
 }
 
-.navTop{
-    background-color: #fff;
-    border-bottom: 2px solid #ccc;
-    height: 50px;
-}
 
-.styleFactory{
+.styleLogo{
    
     display: flex;
     flex-direction: column;
@@ -55,11 +50,15 @@
 
 .navBar li + li::before{
     content: '/';
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .navBar a:hover{
     color: #f4511e;
+}
+
+.sFactory{
+    display: none;
 }
 .banner img{
     width: 100%;
@@ -143,6 +142,17 @@
     margin: 10px auto;
 }
 
+.newArrivals{
+    color: #7dd0dc;
+}
+
+.weLove{
+    color: #d4bcb5;
+}
+
+.freeShipping{
+    color: #ffa396;
+}
 
 
 .hairextensions{
@@ -569,7 +579,17 @@
 
 
 @media screen and (max-width:767px){
+    .navBar li {
+        display: none;
+    }
 
+
+    .sFactory{
+        text-align: left;
+        display: block;
+       font-weight: bold;
+      
+    }
     
 .bottom{
    padding: 12px 0 0;
@@ -662,6 +682,9 @@
         width: 150px;
         height: 60px;
     }
+
+
+   
 
     /* .hairextensions{
         text-align: center;
