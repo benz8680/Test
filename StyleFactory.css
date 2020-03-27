@@ -233,6 +233,8 @@
 }
 
 .hairstyle .item{
+    /* display: flex;
+    flex-direction: column; */
  text-align: center;
  border: 2px solid #ccc;
  height: 100%;
@@ -258,7 +260,7 @@
     background: none;
     border: 3px solid #000000;
     transition: .3s;
-    margin: 0 0 30px;
+    margin: 20px 0;
 }
 
 .hairstyle input:hover{
@@ -286,6 +288,11 @@
 }
 
 
+.row{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
 
 .product .item{
     text-align: center;
@@ -295,6 +302,20 @@
     transition: .2s;
     
 }
+
+
+.product input{
+    font-size: 15px;
+    font-weight: bolder;
+    width: 120px;
+    height: 38px;
+    background: none;
+    border: 3px solid #000000;
+    transition: .3s;
+    margin: 20px 0;
+}
+
+
 
 .product .item:hover{
     border: 1px solid #000
@@ -327,16 +348,7 @@
 }
 
 
-.product input{
-    font-size: 15px;
-    font-weight: bolder;
-    width: 120px;
-    height: 38px;
-    background: none;
-    border: 3px solid #000000;
-    transition: .3s;
-    margin: 0 0 30px;
-}
+
 
 .product input:hover{
     color: #fff;
@@ -641,16 +653,15 @@
         
        
     .product .item {
-        display: flex;
+       display: flex;
         width: 100%;
+    
     }
 
-    .productTxt{
-        margin: 0 auto;
-    }
 
     .hairstyle .item{
         margin : auto 50px;
+        
       
     }
 
