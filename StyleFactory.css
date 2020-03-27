@@ -175,7 +175,7 @@
  top: 18%;
  font-family: sans-serif;
  width: auto;
- 
+ /* padding-bottom: 20%; */
 }
 
 
@@ -616,7 +616,6 @@
 
     .hairextensions{
         text-align: center;
-        
     }
 
    
@@ -662,10 +661,7 @@
 
     .itemBlog{
         margin : 20px 50px;
-    }
-
-   
-    
+    }  
        
 }
 
@@ -724,9 +720,23 @@
 
     .hairTxt{     
     
+        text-align: left;
+         font-family: sans-serif;
+     }
+  
+}
+
+
+@media screen and (min-width:1400px){
+    
+    .hairTxt{     
+        text-align: left;
         position: absolute;
         left:50%;
         right: 0;
         font-family: sans-serif;
     }
 }
+
+
+
