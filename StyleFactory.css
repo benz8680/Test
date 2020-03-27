@@ -640,15 +640,15 @@
         font-family: sans-serif;
     }
     .HAIR{
-        font-size: 40px;
+        font-size: 50px;
     } 
 
     .EXTENSIONS{
-        font-size: 40px;
+        font-size: 50px;
     }
 
     .hairTxt p{
-        font-size: 15px
+        font-size: 20px
     }
         
        
@@ -678,6 +678,10 @@
 
     .email{
         width: 300px;
+    }
+
+    .bottom{
+        height: 100%;
     }
        
 }
@@ -712,6 +716,8 @@
         font-family: sans-serif;
     }
 
+    
+
 
    
 }
@@ -738,6 +744,8 @@
          font-family: sans-serif;
          left:25%;
      }
+
+    
   
 }
 
