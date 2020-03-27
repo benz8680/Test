@@ -66,17 +66,13 @@
 
 
 .banner{
-
-   
- 
     background :url(Style_pic/asset\ 1.jpeg) center center  ;  
     background-size: cover;
     padding-bottom: 58%;
     position: relative;
     margin: 0 0 80px;
     width: 100%;
- 
-    
+  
 }
 
 .bannerTxt{
@@ -96,9 +92,7 @@
     font-size: 18px;
 }
 
-.banner a{
-    
-   
+.banner a{  
     height: 80px;
     width: 200px;
     background-color: #fff;
