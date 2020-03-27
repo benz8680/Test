@@ -712,16 +712,14 @@
     width: 200px;
     }
     
-    .hairextensions{
-        text-align: none;
-        
-    }
+   
 
 
     .hairTxt{     
     
         text-align: left;
          font-family: sans-serif;
+         left:25%;
      }
   
 }
