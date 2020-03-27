@@ -616,21 +616,23 @@
 
     .hairextensions{
         text-align: center;
+        
     }
 
    
-    .hairTxt{      
+    .hairTxt{
+           
         position: relative;
         left:0;
         right: 0;
         font-family: sans-serif;
     }
     .HAIR{
-        font-size: 70px;
+        font-size: 50px;
     } 
 
     .EXTENSIONS{
-        font-size: 70px;
+        font-size: 50px;
     }
 
     .hairTxt p{
@@ -662,6 +664,10 @@
     .itemBlog{
         margin : 20px 50px;
     }  
+
+    .email{
+        width: 300px;
+    }
        
 }
 
