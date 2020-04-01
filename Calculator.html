@@ -30,7 +30,7 @@
             justify-content: center;
             align-items: center;
             border: 2px solid #333;
-            padding:  5px;
+            padding: 5px;
 
         }
 
@@ -42,24 +42,26 @@
             font-size: 25px;
             cursor: pointer;
             margin: 2px;
-            
+
         }
 
 
         .textview {
             width: 256px;
             margin: 10px auto 15px;
-            font-size: 30px;         
+            font-size: 30px;
             height: 60px;
             border: 2px solid #999;
         }
+
+       
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="calculator">
-            <form action="" name="form">
+        <div class="calculator"  >
+            <form action="" name="display">
                 <input class="textview" name="textview">
             </form>
 
@@ -86,7 +88,8 @@
                     <td><input class="button" type="button" value="1" onclick="input(1)"></td>
                     <td><input class="button" type="button" value="2" onclick="input(2)"></td>
                     <td><input class="button" type="button" value="3" onclick="input(3)"></td>
-                    <td rowspan="2"><input class="button" type="button" value="=" onclick="equal()"style="height: 126px;"></td>
+                    <td rowspan="2"><input class="button" type="button" value="=" onclick="equal()"
+                            style="height: 126px;"></td>
                 </tr>
 
                 <tr>
@@ -106,18 +109,18 @@
 
     <script>
         function input(num) {
-            document.form.textview.value = document.form.textview.value + num;
+            document.display.textview.value = document.display.textview.value + num;
         }
         function equal() {
-            document.form.textview.value = eval(document.form.textview.value)
+            document.display.textview.value = eval(document.display.textview.value)
         }
 
         function clean() {
-            document.form.textview.value = "";
+            document.display.textview.value = "";
         }
         function back() {
-            var exp = document.form.textview.value;
-            document.form.textview.value = exp.substring(0, exp.length - 1);
+            var exp = document.display.textview.value;
+            document.display.textview.value = exp.substring(0, exp.length - 1);
         }
 
 
