@@ -46,7 +46,7 @@
         }
 
 
-        .textview {
+        .screen {
             width: 256px;
             margin: 10px auto 15px;
             font-size: 30px;
@@ -62,7 +62,7 @@
     <div class="container">
         <div class="calculator"  >
             <form action="" name="display">
-                <input class="textview" name="textview">
+                <input class="screen" name="screen">
             </form>
 
             <table>
@@ -109,18 +109,18 @@
 
     <script>
         function input(num) {
-            document.display.textview.value = document.display.textview.value + num;
+            document.display.screen.value = document.display.screen.value + num;
         }
         function equal() {
-            document.display.textview.value = eval(document.display.textview.value)
+            document.display.screen.value = eval(document.display.screen.value)
         }
 
         function clean() {
-            document.display.textview.value = "";
+            document.display.screen.value = "";
         }
         function back() {
-            var exp = document.display.textview.value;
-            document.display.textview.value = exp.substring(0, exp.length - 1);
+            var exp = document.display.screen.value;
+            document.display.screen.value = exp.substring(0, exp.length - 1);
         }
 
 
