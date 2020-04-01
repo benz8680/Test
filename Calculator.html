@@ -29,6 +29,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            border: 2px solid #000;
 
         }
 
@@ -40,7 +41,9 @@
             font-size: 15px;
             cursor: pointer;
             margin: 2px;
+            
         }
+
 
         .textview {
             margin: 10px auto 5px;
@@ -63,34 +66,33 @@
                 <tr>
                     <td><input class="button" type="button" value="AC" onclick="clean()"></td>
                     <td><input class="button" type="button" value="C" onclick="back()"></td>
-                    <td><input class="button" type="button" value="÷" onclick="insert('/')"></td>
-                    <td><input class="button" type="button" value="×" onclick="insert('*')"></td>
+                    <td><input class="button" type="button" value="÷" onclick="input('/')"></td>
+                    <td><input class="button" type="button" value="×" onclick="input('*')"></td>
                 </tr>
                 <tr>
-                    <td><input class="button" type="button" value="7" onclick="insert(7)"></td>
-                    <td><input class="button" type="button" value="8" onclick="insert(8)"></td>
-                    <td><input class="button" type="button" value="9" onclick="insert(9)"></td>
-                    <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
+                    <td><input class="button" type="button" value="7" onclick="input(7)"></td>
+                    <td><input class="button" type="button" value="8" onclick="input(8)"></td>
+                    <td><input class="button" type="button" value="9" onclick="input(9)"></td>
+                    <td><input class="button" type="button" value="-" onclick="input('-')"></td>
                 </tr>
                 <tr>
-                    <td><input class="button" type="button" value="4" onclick="insert(4)"></td>
-                    <td><input class="button" type="button" value="5" onclick="insert(5)"></td>
-                    <td><input class="button" type="button" value="6" onclick="insert(6)"></td>
-                    <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+                    <td><input class="button" type="button" value="4" onclick="input(4)"></td>
+                    <td><input class="button" type="button" value="5" onclick="input(5)"></td>
+                    <td><input class="button" type="button" value="6" onclick="input(6)"></td>
+                    <td><input class="button" type="button" value="+" onclick="input('+')"></td>
                 </tr>
                 <tr>
-                    <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
-                    <td><input class="button" type="button" value="2" onclick="insert(2)"></td>
-                    <td><input class="button" type="button" value="3" onclick="insert(3)"></td>
-                    <td rowspan="2"><input class="button" type="button" value="=" onclick="equal()"
-                            style="height: 87px;"></td>
+                    <td><input class="button" type="button" value="1" onclick="input(1)"></td>
+                    <td><input class="button" type="button" value="2" onclick="input(2)"></td>
+                    <td><input class="button" type="button" value="3" onclick="input(3)"></td>
+                    <td rowspan="2"><input class="button" type="button" value="=" onclick="equal()"style="height: 87px;"></td>
                 </tr>
 
                 <tr>
-                    <td colspan="2"><input class="button " type="button" value="0" onclick="insert(0)"
+                    <td colspan="2"><input class="button " type="button" value="0" onclick="input(0)"
                             style="width: 87px;"></td>
-                    <td><input class="button" type="button" value="." onclick="insert('.')"></td>
-                   
+                    <td><input class="button" type="button" value="." onclick="input('.')"></td>
+
 
                 </tr>
             </table>
@@ -102,7 +104,7 @@
 
 
     <script>
-        function insert(num) {
+        function input(num) {
             document.form.textview.value = document.form.textview.value + num;
         }
         function equal() {
@@ -117,7 +119,7 @@
             document.form.textview.value = exp.substring(0, exp.length - 1);
         }
 
-    
+
     </script>
 
 </body>
