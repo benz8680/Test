@@ -23,22 +23,23 @@
 
 
         .calculator {
-            margin-top: 10%;
+            margin-top: 8%;
             background: linear-gradient(to bottom, #000, #f00, #fa0);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border: 2px solid #000;
+            border: 2px solid #333;
+            padding:  5px;
 
         }
 
         .button {
             background-color: #222;
             color: #ddd;
-            width: 40px;
-            height: 40px;
-            font-size: 15px;
+            width: 60px;
+            height: 60px;
+            font-size: 25px;
             cursor: pointer;
             margin: 2px;
             
@@ -46,10 +47,10 @@
 
 
         .textview {
+            width: 256px;
             margin: 10px auto 5px;
-            font-size: 20px;
-            width: 173px;
-            height: 35px;
+            font-size: 30px;         
+            height: 60px;
             border: 2px solid #999;
         }
     </style>
@@ -85,12 +86,12 @@
                     <td><input class="button" type="button" value="1" onclick="input(1)"></td>
                     <td><input class="button" type="button" value="2" onclick="input(2)"></td>
                     <td><input class="button" type="button" value="3" onclick="input(3)"></td>
-                    <td rowspan="2"><input class="button" type="button" value="=" onclick="equal()"style="height: 87px;"></td>
+                    <td rowspan="2"><input class="button" type="button" value="=" onclick="equal()"style="height: 126px;"></td>
                 </tr>
 
                 <tr>
                     <td colspan="2"><input class="button " type="button" value="0" onclick="input(0)"
-                            style="width: 87px;"></td>
+                            style="width: 126px;"></td>
                     <td><input class="button" type="button" value="." onclick="input('.')"></td>
 
 
