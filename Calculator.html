@@ -53,16 +53,14 @@
             height: 60px;
             border: 2px solid #999;
         }
-
-       
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="calculator"  >
+        <div class="calculator">
             <form action="" name="display">
-                <input class="screen" name="screen">
+                <input class="screen" name="screen" id="screen">
             </form>
 
             <table>
@@ -107,19 +105,21 @@
 
 
     <script>
+
+        var result = document.getElementById('screen');
         function input(x) {
-            document.display.screen.value = document.display.screen.value + x;
+            result.value = result.value + x;
         }
         function equal() {
-            document.display.screen.value = eval(document.display.screen.value)
+            result.value = eval(result.value)
         }
 
         function clean() {
-            document.display.screen.value = "";
+            result.value = "";
         }
         function back() {
-            var result = document.display.screen.value;
-            document.display.screen.value = result.substring(0, result.length - 1);
+            var x = result.value;
+            result.value = x.substring(0, x.length - 1);
         }
 
 

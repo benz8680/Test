@@ -15,7 +15,7 @@
             width: 800px;
             height: 200px;
             border: 2px solid #ccc;
-            margin: 0 auto 30px;
+            margin: 0 auto 10px;
             display: flex;
             flex-direction: column;
             justify-self: center;
@@ -32,9 +32,9 @@
             display: block;
             margin: auto;
             background-color: #16f;
-
-            border-radius: 2px;
+           
             color: #ccc;
+
         }
 
         #enterNumber {
@@ -42,24 +42,17 @@
             margin: auto;
         }
 
-        .btn {
-            width: 100%;
+        table {
+
             margin: auto;
+
         }
 
-        .btn button {
+        .control {
             background-color: #000;
             color: #ccc;
             width: 40px;
             height: 40px;
-        }
-
-        #X {
-            color: #f00;
-        }
-
-        #V {
-            color: #0f0;
         }
     </style>
 </head>
@@ -71,38 +64,51 @@
     </div>
 
 
-    <button id="generator" onclick="randomNumber()">產生數字</button>
+    <button id="generator" onclick="randomNumber()" class="btn ">產生數字</button>
     <input type="text" id="enterNumber" name="text">
-    <div class="btn col-12">
-        <button onclick="insert(1)">1</button>
-        <button>2</button>
-        <button>3</button>
-        <br>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <br>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <br>
-        <button id="X">X</button>
-        <button>0</button>
-        <button id="V">V</button>
 
-    </div>
+    <table class="Number">
+        <tr>
+            <td><button type="button" class="btn control" onclick="GetNum(1)">1</button></td>
+            <td><button type="button" class="btn control" onclick="GetNum(2)">2</button></td>
+            <td><button type="button" class="btn control" onclick="GetNum(3)">3</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn control" onclick="GetNum(4)">4</button></td>
+            <td><button type="button" class="btn control" onclick="GetNum(5)">5</button></td>
+            <td><button type="button" class="btn control" onclick="GetNum(6)">6</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn control" onclick="GetNum(7)">7</button></td>
+            <td><button type="button" class="btn control" onclick="GetNum(8)">8</button></td>
+            <td><button type="button" class="btn control" onclick="GetNum(9)">9</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn control" onclick="clean()" style="color: red;">X</button></td>
+            <td><button type="button" class="btn control" onclick="GetNum(0)">0</button></td>
+            <td><button type="button" class="btn control" onclick="check()" style="color: greenyellow;">V</button></td>
+        </tr>
+    </table>
+
+
 
 
     <script>
-        function randomNumber(min, max) {
-            alert(Math.floor(Math.random() * 100) + 1);
 
+        var input = document.getElementById('enterNumber');
+
+        function GetNum(x) {
+
+            input.value = input.value + x;
+
+            if (input.value > 100) {
+                alert('超出範圍!');
+                input.value = "";
+            }
         }
-
-        function insert(num) {
-            document.input.text.value = document.input.text.value + num;
+        function clean() {
+            input.value = "";
         }
-
 
 
 
