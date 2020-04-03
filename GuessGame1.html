@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Ramdom1</title>
+    <title>GuessGame1</title>
     <style>
         .numberArea {
             width: 800px;
@@ -23,7 +23,11 @@
 
         }
 
-        #numberRange {
+        label {
+            font-size: 40px;
+        }
+
+        #Range {
             margin: auto;
         }
 
@@ -32,7 +36,7 @@
             display: block;
             margin: auto;
             background-color: #16f;
-           
+
             color: #ccc;
 
         }
@@ -60,7 +64,7 @@
 
 <body>
     <div class="numberArea col-12 ">
-        <label for="" id="numberRange">123</label>
+        <label for="" id="Range"><span id="small"></span>~<span id="big"></span></label>
     </div>
 
 
@@ -94,20 +98,90 @@
 
 
     <script>
+        var MaxCurrent;
+        var MinCurrent;
+        var big = 100;
+        var small = 0;
+        document.getElementById('big').innerText = big;
+        document.getElementById('small').innerText = small;
 
+        var range = document.getElementById('numberRange');
+        var random;
+        var randomResult;
         var input = document.getElementById('enterNumber');
+
+        function randomNumber() {
+
+            random = Math.floor(Math.random() * 101);
+            randomResult = random;
+
+
+        }
 
         function GetNum(x) {
 
             input.value = input.value + x;
 
-            if (input.value > 100) {
-                alert('超出範圍!');
-                input.value = "";
-            }
         }
         function clean() {
             input.value = "";
+        }
+
+        function check() {
+            if (input.value == "") {
+                alert('請輸入數字!');
+                input.value = "";
+
+            }
+
+
+            if (randomResult == null) {
+                alert('你尚未按下產生數字鈕');
+                input.value = "";
+            }
+
+
+            else if (input.value >= big) {
+                alert('請輸入範圍內的數字');
+                input.value = "";
+            }
+
+            else if (input.value <= small) {
+                alert('請輸入範圍內的數字');
+                input.value = "";
+
+            }
+
+            else if (randomResult > input.value && input.value < big) {
+                small = input.value;
+                document.getElementById('small').innerText = input.value;
+
+
+            }
+
+
+
+
+            else if (randomResult < input.value && input.value > small) {
+                big = input.value;
+                document.getElementById('big').innerText = input.value;
+
+
+            }
+
+
+
+            else if (input.value == randomResult) {
+                alert('恭喜你猜對了!');
+                input.value = "";
+                big = 100;
+                small = 0;
+                document.getElementById('big').innerText = big;
+                document.getElementById('small').innerText = small;
+            }
+
+
+
         }
 
 
