@@ -40,7 +40,7 @@
             width: 120px;
             height: 40px;
             color: #ccc;
-         
+
 
 
         }
@@ -49,7 +49,7 @@
             display: block;
             margin: auto;
             width: 200px;
-         
+
         }
 
         table {
@@ -118,7 +118,7 @@
 
         function randomNumber() {
 
-            random = Math.floor(Math.random() * 101);
+            random = Math.floor(Math.random() * 100)+1;
             randomResult = random;
 
 
@@ -178,12 +178,13 @@
 
 
             else if (input.value == randomResult) {
-                alert('恭喜你猜對了! 答案為:' + randomResult);
+                alert('恭喜你猜對了! 答案為：' + randomResult);
                 input.value = "";
                 big = 100;
                 small = 0;
                 document.getElementById('big').innerText = big;
                 document.getElementById('small').innerText = small;
+                randomResult = null;
             }
 
 
