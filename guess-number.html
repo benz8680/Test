@@ -88,7 +88,7 @@
             <div class="col-md-12">
               <div class="btn-group btn-group-justified">
                 <a id="start" type="button" class="btn btn-default" onclick="GetNumArray()">開始</a>
-                <a id="restart" type="button" class="btn btn-default">放棄重來</a>
+                <a id="restart" type="button" class="btn btn-default" onclick="ReStart()"> 放棄重來</a>
                 <a id="cheat" type="button" class="btn btn-default" onclick="ShowAns()">看答案</a>
               </div>
               <br>
@@ -142,7 +142,7 @@
     var input = document.getElementById('userGuess');
     var RandomArray = [];
     var inputArray = [];
-    input = inputArray;
+
 
 
     function GetNumArray() {
@@ -152,8 +152,13 @@
         if (!RandomArray.includes(rNum))
           RandomArray.push(rNum);
       }
-      
-      
+
+
+    }
+
+    function ReStart() {
+      RandomArray = "";
+      input.value = "";
     }
 
     function ShowAns() {
@@ -165,9 +170,10 @@
     }
 
     function Guess() {
-
+      inputArray = input.value;
       if (input.value.length > 4)
         alert('超出範圍');
+      alert(inputArray);
     }
 
 
