@@ -1,37 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <title>Apple</title>
+    <style>
+
+    </style>
 </head>
 
-
 <body>
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            <div class="col-12">
+                <button class="btn-color" onclick="yellow()">Yellow</button>
+                <button class="btn-color" onclick="black()">Black</button>
+                <button class="btn-color" onclick="white()">White</button>
+                <button class="btn-color" onclick="red()">Red</button>
+            </div>
+        </div>
+    </div>
 
-    <button>iphone</button>
-    <button>ipad</button>
-    <button>mac</button>
-    <button>watch</button>
 
     <script>
         //iPhone, iPad, Mac, Watch
         var products = {
             iphone: {
-                p01:{ id:'p01', color:'紅',  price:'25000', storage:'64G', network:'Wifi', pic:'p01', url:'#'  },
-                p02:{ id:'p02', color:'藍', price:'27000', storage:'128G', network:'Wifi', pic:'p02', url:'#'  },
-                p03:{ id:'p03', color:'黃', price:'28000', storage:'256G', network:'Wifi', pic:'p03', url:'#'  }
-             },
-            ipad: {},
-            mac: {},
-            watch: {}
+                p01: { id: 'p01', color: '紅', price: '25000', storage: '64G', network: 'Wifi', pic: 'p01', url: '#' },
+                p02: { id: 'p02', color: '藍', price: '27000', storage: '128G', network: 'Wifi', pic: 'p02', url: '#' },
+                p03: { id: 'p03', color: '黃', price: '28000', storage: '256G', network: 'Wifi', pic: 'p03', url: '#' }
+            },
+            storage: [
+                { size: '64G', price: 25000 },
+                { size: '128G', price: 27000 },
+                { size: '256G', price: 28000 },
+            ]
         };
 
 
- 
+        function yellow(){
+            
+        }
 
     </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
