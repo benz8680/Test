@@ -179,23 +179,28 @@
       var a = 0;
       var b = 0;
       var judgment = 0;
-
-      for (var x = 0; x < inputSplitor.length; x++) {
-        for (var y = 0; y < inputSplitor.length; y++) {
-          if (inputSplitor[x] == inputSplitor[y])
-            judgment += 1;
-        }
-      }
+    
 
 
-      if (inputSplitor > 4 || inputSplitor < 4) {
+
+      if (inputSplitor.length > 4 || inputSplitor.length < 4) {
+     
         alert('需要四位數!');
         CleanInput();
 
       }
 
 
+
       else {
+
+        for (var x = 0; x < inputSplitor.length; x++) {
+          for (var y = 0; y < inputSplitor.length; y++) {
+            if (inputSplitor[x] == inputSplitor[y])
+              judgment += 1;
+          }
+        }
+
 
         if (judgment != 4) {
           alert('數字重複!');
