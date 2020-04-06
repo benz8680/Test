@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-12">
                 <button onclick="iphone()">iPhone</button>
-                <button>iPad</button>
+                <button onclick="ipad()">iPad</button>
 
             </div>
         </div>
@@ -71,11 +71,23 @@
             },
 
 
-            ipad:{
-                banner:{
-                    ipadPic:'';
-                }
+            ipad: {
+                banner: {
+                    ipadPic: 'iphone_pic/ipad-hero-unselected-201909_GEO_TW.png'
+                },
+
+                color: [
+                    { col: '金色', url: 'iphone_pic/ipad-wifi-select-gold-201909_GEO_TW.png' },
+                    { col: '灰色', url: 'iphone_pic/ipad-wifi-select-space-201909_GEO_TW.png' },
+                    { col: '銀色', url: 'iphone_pic/ipad-wifi-select-silver-201909_GEO_TW.png' },
+                ],
+
+                storage: [
+                    { size: '128G', price: 'NT$10900' },
+                    { size: '256G', price: 'NT$13900' },
+                ]
             }
+
         }
 
         var proImg = document.getElementById('img');
@@ -93,7 +105,7 @@
             color.appendChild(colorDiv);
             var storageDiv = document.createElement('div');
             storage.appendChild(storageDiv);
-     
+
 
             for (let a of products.iphone.color) {
                 let colorbtn = document.createElement('button');
@@ -141,6 +153,70 @@
                     priceDiv.innerHTML = btn.getAttributeNode('price').value;
                 });
             }
+
+
+        }
+
+
+
+        function ipad() {
+            proImg.setAttribute('src', 'iphone_pic/ipad-hero-unselected-201909_GEO_TW.png');
+            color.innerHTML = '<h1>顏色</h1>';
+            storage.innerHTML = '<h1>記憶體</h1>';
+            price.innerHTML = '<h1>價錢</h1>';
+            var colorDiv = document.createElement('div');
+            color.appendChild(colorDiv);
+            var storageDiv = document.createElement('div');
+            storage.appendChild(storageDiv);
+
+            for (let a of products.ipad.color) {
+                let colorbtn = document.createElement('button');
+                let p = document.createElement('p');
+                p.innerHTML = a.col;
+                colorbtn.classList.add('color-btn');
+                colorbtn.setAttribute('url', a.url);
+                colorbtn.appendChild(p);
+                colorDiv.appendChild(colorbtn);
+                colorbtn.style.margin = '0 10px 0 0';
+                colorbtn.style.width = "80px";
+                colorbtn.style.height = "35px";
+
+            }
+
+            let colorbtns = document.getElementsByClassName('color-btn');
+            for (let btn of colorbtns) {
+                btn.addEventListener('click', function () {
+                    proImg.setAttribute('src', btn.getAttributeNode('url').value);
+                });
+            }
+
+
+            for (let b of products.ipad.storage) {
+                let storagebtn = document.createElement('button');
+                let p = document.createElement('p');
+                p.innerHTML = b.size;
+                storagebtn.classList.add('storagebtn-btn');
+                storagebtn.setAttribute('price', b.price);
+                storagebtn.appendChild(p);
+                storageDiv.appendChild(storagebtn);
+                storagebtn.style.margin = '0 10px 0 0';
+                storagebtn.style.width = "80px";
+                storagebtn.style.height = "35px";
+            }
+
+            var priceDiv = document.createElement('h1');
+            price.appendChild(priceDiv);
+
+
+            let storagebtns = document.getElementsByClassName('storagebtn-btn');
+            for (let btn of storagebtns) {
+                btn.addEventListener('click', function () {
+                    priceDiv.innerHTML = btn.getAttributeNode('price').value;
+                });
+            }
+
+
+
 
 
         }
