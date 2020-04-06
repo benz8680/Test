@@ -9,122 +9,144 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Apple</title>
+    <title>Hello, world!</title>
     <style>
-        .btnArea {
-            margin: 50px 0 10px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .phonePic img {
+        #img {
             height: 500px;
-            width: 450px;
+            width: 400px;
         }
-
-      
     </style>
 </head>
 
 <body>
-    <div class="container ">
+    <div class="container">
         <div class="row">
-            <div class=" col-12 btnArea">
-
-                <button class="btn-color" onclick="Yellow()">Yellow</button>
-                <button class="btn-color" onclick="Black()">Black</button>
-                <button class="btn-color" onclick="White()">White</button>
-                <button class="btn-color" onclick="Red()">Red</button>
-
-
-
-            </div>
-
-
-        </div>
-
-        <div class="row">
-            <div class="col-12 storageeArea " id="storageeArea">
-                <button onclick="Small()">64G</button>
-                <button onclick="Mid()">128G</button>
-                <button onclick="Large()">256G</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="phonePic col-12 " id="phonePic">
-
-                <img src="iphone_pic/iphone11-select-2019-family.png" alt="">
+            <div class="col-12">
+                <button onclick="iphone()">iPhone</button>
+                <button>iPad</button>
 
             </div>
         </div>
 
         <div class="row">
-            <h2 class="price col-12 " id="priceArea">價格為:</h2>
+            <div class="col-12 col-md-6">
+                <img src="" alt="" id="img"> </div>
+            <div class="col-12 col-md-6">
+                <div class="color" id="color">
+
+                </div>
+                <div class="storage" id="storage">
+
+                </div>
+                <div class="price" id="price">
+
+                </div>
+            </div>
         </div>
+
     </div>
 
 
+
     <script>
-        //iPhone, iPad, Mac, Watch
         var products = {
             iphone: {
+                banner: {
+                    iphonePic: 'iphone_pic/iphone11-select-2019-family.png'
+                },
 
-                yellow: { color: '黃', url: 'iphone_pic/iphone11-yellow-select-2019.png' },
-                black: { color: '黑', url: 'iphone_pic/iphone11-black-select-2019.png' },
-                white: { color: '白', url: 'iphone_pic/iphone11-white-select-2019.png' },
-                red: { color: '紅', url: 'iphone_pic/iphone11-red-select-2019.png' },
-            },
-            storage: {
-                small: { size: '64G', price: 25000 },
-                mid: { size: '128G', price: 27000 },
-                large: { size: '256G', price: 28000 },
+                color: [
+                    { col: '紅色', url: 'iphone_pic/iphone11-red-select-2019.png' },
+                    { col: '黑色', url: 'iphone_pic/iphone11-black-select-2019.png' },
+                    { col: '白色', url: 'iphone_pic/iphone11-white-select-2019.png' },
+                    { col: '黃色', url: 'iphone_pic/iphone11-yellow-select-2019.png' }
+                ],
+
+                storage: [
+
+                    { size: '64G', price: 'NT$25000' },
+                    { size: '128G', price: 'NT$27000' },
+                    { size: '256G', price: 'NT$28000' },
+                ]
+
+
+
             }
-        };
-        var phonepic = document.getElementById('phonePic');
-
-
-        function Yellow() {
-            phonepic.innerHTML = `<img src="${products.iphone.yellow.url}" alt="">`;
         }
 
-        function Black() {
-            phonepic.innerHTML = `<img src="${products.iphone.black.url}" alt="">`;
-        }
-
-        function White() {
-            phonepic.innerHTML = `<img src="${products.iphone.white.url}" alt="">`;
-        }
-        function Red() {
-            phonepic.innerHTML = `<img src="${products.iphone.red.url}" alt="">`;
-        }
-        
+        var proImg = document.getElementById('img');
+        var color = document.getElementById('color');
+        var storage = document.getElementById('storage');
 
 
-        function Small() {
-            var h2 = document.getElementById('priceArea');
-           h2.innerHTML=`價格為:${products.storage.small.price}`
 
-        }
+        function iphone() {
+            proImg.setAttribute('src', products.iphone.banner.iphonePic);
+            color.innerHTML = '<h1>顏色</h1>';
+            storage.innerHTML = '<h1>記憶體</h1>';
+            price.innerHTML = '<h1>價錢</h1>';
+            var colorDiv = document.createElement('div');
+            color.appendChild(colorDiv);
+            var storageDiv = document.createElement('div');
+            storage.appendChild(storageDiv);
+     
 
-        function Mid(){
-            var h2 = document.getElementById('priceArea');
-           h2.innerHTML=`價格為:${products.storage.mid.price}`
-        }
+            for (let a of products.iphone.color) {
+                let colorbtn = document.createElement('button');
+                let p = document.createElement('p');
+                p.innerHTML = a.col;
+                colorbtn.classList.add('color-btn');
+                colorbtn.setAttribute('url', a.url);
+                colorbtn.appendChild(p);
+                colorDiv.appendChild(colorbtn);
+                colorbtn.style.margin = '0 10px 0 0';
+                colorbtn.style.width = "80px";
+                colorbtn.style.height = "35px";
 
-        function Large(){
-            var h2 = document.getElementById('priceArea');
-           h2.innerHTML=`價格為:${products.storage.large.price}`
+            }
+
+            let colorbtns = document.getElementsByClassName('color-btn');
+            for (let btn of colorbtns) {
+                btn.addEventListener('click', function () {
+                    proImg.setAttribute('src', btn.getAttributeNode('url').value);
+                });
+            }
+
+
+
+
+            for (let b of products.iphone.storage) {
+                let storagebtn = document.createElement('button');
+                let p = document.createElement('p');
+                p.innerHTML = b.size;
+                storagebtn.classList.add('storagebtn-btn');
+                storagebtn.setAttribute('price', b.price);
+                storagebtn.appendChild(p);
+                storageDiv.appendChild(storagebtn);
+                storagebtn.style.margin = '0 10px 0 0';
+                storagebtn.style.width = "80px";
+                storagebtn.style.height = "35px";
+            }
+            var priceDiv = document.createElement('h1');
+            price.appendChild(priceDiv);
+
+
+            let storagebtns = document.getElementsByClassName('storagebtn-btn');
+            for (let btn of storagebtns) {
+                btn.addEventListener('click', function () {
+                    priceDiv.innerHTML = btn.getAttributeNode('price').value;
+                });
+            }
+
+
         }
 
 
 
 
     </script>
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -136,7 +158,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
