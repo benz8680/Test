@@ -93,36 +93,36 @@
               </div>
               <br>
               <ul id="guessResults" class="list-group">
-                <li class="list-group-item">
+                <!-- <li class="list-group-item">
                   <span class="label label-danger">0A1B</span>
-                  <!--<span class="badge">0A1B</span>-->
+                  
                   1234
                 </li>
                 <li class="list-group-item">
                   <span class="label label-danger">0A3B</span>
-                  <!--<span class="badge">0A3B</span>-->
+                 
                   3456
                 </li>
                 <li class="list-group-item">
                   <span class="label label-danger">0A2B</span>
-                  <!--<span class="badge">0A2B</span>-->
+              
                   4567
                 </li>
                 <li class="list-group-item">
                   <span class="label label-danger">2A0B</span>
-                  <!--<span class="badge">2A0B</span>-->
+               
                   6089
                 </li>
                 <li class="list-group-item">
                   <span class="label label-danger">3A0B</span>
-                  <!--<span class="badge">3A0B</span>-->
+                
                   6345
                 </li>
                 <li class="list-group-item">
                   <span class="label label-success">4A0B</span>
-                  <!--<span class="badge badge-success">4A0B</span>-->
+              
                   6385
-                </li>
+                </li> -->
               </ul>
               <div class="input-group">
                 <span class="input-group-addon" id="sizing-addon1">猜答案</span>
@@ -139,42 +139,117 @@
   </div>
 
   <script>
-    var input = document.getElementById('userGuess');
+
     var RandomArray = [];
-    var inputArray = [];
-
-
 
     function GetNumArray() {
 
-      while (RandomArray.length != 4) {
+      while (RandomArray.length < 4) {
         var rNum = Math.floor(Math.random() * 10);
-        if (!RandomArray.includes(rNum))
+        if (RandomArray.includes(rNum) == false)
           RandomArray.push(rNum);
+
+      }
+
+    }
+
+    function ReStart() {
+      RandomArray = [];
+      CleanInput();
+      CleanResult();
+
+    }
+
+    function ShowAns() {
+      var ansNum = '';
+
+      if (RandomArray == "")
+        alert('請按下開始鍵!');
+      else {
+        for (let i = 0; i < RandomArray.length; i++) {
+          ansNum += RandomArray[i]
+        }
+        alert(ansNum);
+      }
+    }
+
+    function Guess() {
+      var input = String(document.getElementById('userGuess').value);
+      var inputSplitor = input.split('');
+      var a = 0;
+      var b = 0;
+      var judgment = 0;
+
+      for (var x = 0; x < inputSplitor.length; x++) {
+        for (var y = 0; y < inputSplitor.length; y++) {
+          if (inputSplitor[x] == inputSplitor[y])
+            judgment += 1;
+        }
+      }
+
+
+      if (inputSplitor > 4 || inputSplitor < 4) {
+        alert('需要四位數!');
+        CleanInput();
+
+      }
+
+
+      else {
+
+        if (judgment != 4) {
+          alert('數字重複!');
+          CleanInput();
+        }
+
+        else {
+          for (var i = 0; i < RandomArray.length; i++) {
+            for (var j = 0; j < inputSplitor.length; j++) {
+              if (RandomArray[i] == inputSplitor[j] && i == j) {
+                a += 1;
+              }
+              else if (RandomArray[i] == inputSplitor[j] && i != j) {
+                b += 1;
+              }
+            }
+          }
+          var result = document.getElementById('guessResults');
+          let li = document.createElement('li');
+          li.className = "list-group-item";
+
+
+
+          if (a == 4) {
+            li.innerHTML = `<span class="label label-success"> ${a}A${b}B </span> ${input}`;
+            result.appendChild(li);
+            alert('恭喜答對!');
+            CleanInput();
+          }
+
+          else {
+            li.innerHTML = `<span class="label label-danger"> ${a}A${b}B </span> ${input}`;
+            result.appendChild(li);
+            CleanInput();
+          }
+
+        }
       }
 
 
     }
 
-    function ReStart() {
-      RandomArray = "";
-      input.value = "";
+    function CleanInput() {
+      var inputClean = document.getElementById('userGuess');
+      inputClean.value = '';
     }
 
-    function ShowAns() {
+    function CleanResult() {
+      var resultClean = document.getElementById('guessResults');
+      resultClean.innerHTML = '';
 
-      if (RandomArray == "")
-        alert('請按下開始鍵!');
-      else
-        alert(RandomArray);
     }
 
-    function Guess() {
-      inputArray = input.value;
-      if (input.value.length > 4)
-        alert('超出範圍');
-      alert(inputArray);
-    }
+
 
 
 
