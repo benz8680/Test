@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        h1{
+           text-align: center;
+        }
+     
+        #title {
+            background-color: #f00;
+        }
+
+        table{
+            border: 2px solid #000;
+            margin: auto;
+            width: 100%;
+            
+        }
+
+        td{
+            padding: 10px;
+            border: 2px solid #000;
+        }
+
+        tr:nth-child(even){
+            background-color: #0df;
+        }
+        
+        #title{
+            transition: .1s;
+        }
+
+        #title:hover{
+            background-color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body id="body">
+
+
+    <h1>Apple iPad</h1>
+
+
+    <script>
+        var body = document.getElementById('body');
+        var table = document.createElement('table');
+
+        body.appendChild(table);
+
+        let ipad = '';
+        window.onload = function () {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                ipad = JSON.parse(this.responseText);
+                addThead(ipad);
+                addTbody(ipad);
+
+            }
+            xhr.open('GET', "http://127.0.0.1:5503/iPad.json");
+            xhr.send();
+
+        }
+
+        function addThead(titleArray) {
+            let thead = document.createElement('thead');
+            let tr = document.createElement('tr');
+            for (let x in titleArray[0]) {
+                let th = document.createElement('th');
+                th.innerHTML = x;
+                th.setAttribute('type', 'button');
+                th.setAttribute('onclick', 'sort(this)');
+                th.setAttribute('id', 'title');
+                tr.appendChild(th);
+            }
+
+            thead.appendChild(tr);
+            table.appendChild(thead);
+
+
+
+        }
+
+
+        function addTbody(bodyArray) {
+            let tbody = document.createElement('tbody');
+            for (let x in bodyArray) {
+                let tr = document.createElement('tr');
+                for (let i in bodyArray[x]) {
+                    // console.log(bodyArray[x][i]);
+                    let td = document.createElement('td');
+                    td.innerHTML = bodyArray[x][i];
+                    tr.appendChild(td);
+                }
+
+                tbody.appendChild(tr);
+            }
+
+            table.appendChild(tbody);
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
