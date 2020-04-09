@@ -62,7 +62,7 @@
 
                 ipad = JSON.parse(this.responseText);
                 addThead(ipad);
-
+                addTbody(ipad);
 
             }
             xhr.open('GET', "http://127.0.0.1:5503/iPad.json");
@@ -84,7 +84,7 @@
 
             thead.appendChild(tr);
             table.appendChild(thead);
-            addTbody(ipad);
+          
 
 
         }
