@@ -4,38 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Apple iPad</title>
     <style>
-
-        h1{
-           text-align: center;
+        h1 {
+            text-align: center;
         }
-     
+
         #title {
             background-color: #f00;
         }
 
-        table{
+        table {
             border: 2px solid #000;
             margin: auto;
             width: 100%;
-            
+
         }
 
-        td{
+        td {
             padding: 10px;
             border: 2px solid #000;
         }
 
-        tr:nth-child(even){
+        tr:nth-child(even) {
             background-color: #0df;
         }
-        
-        #title{
+
+        #title {
             transition: .1s;
         }
 
-        #title:hover{
+        #title:hover {
             background-color: #fff;
             cursor: pointer;
         }
@@ -52,15 +51,18 @@
         var body = document.getElementById('body');
         var table = document.createElement('table');
 
+
         body.appendChild(table);
 
         let ipad = '';
         window.onload = function () {
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
+
+
                 ipad = JSON.parse(this.responseText);
                 addThead(ipad);
-                addTbody(ipad);
+
 
             }
             xhr.open('GET', "http://127.0.0.1:5503/iPad.json");
@@ -75,21 +77,22 @@
                 let th = document.createElement('th');
                 th.innerHTML = x;
                 th.setAttribute('type', 'button');
-                th.setAttribute('onclick', 'sort(this)');
+                th.setAttribute('onclick', 'Sort(this)');
                 th.setAttribute('id', 'title');
                 tr.appendChild(th);
             }
 
             thead.appendChild(tr);
             table.appendChild(thead);
-
+            addTbody(ipad);
 
 
         }
 
 
         function addTbody(bodyArray) {
-            let tbody = document.createElement('tbody');
+            var tbody = document.createElement('tbody');
+            tbody.setAttribute('id','tbody');
             for (let x in bodyArray) {
                 let tr = document.createElement('tr');
                 for (let i in bodyArray[x]) {
@@ -104,6 +107,46 @@
 
             table.appendChild(tbody);
 
+        }
+
+
+        var blank = '';
+
+        function Sort(btn) {
+            if (btn.innerHTML != blank) {
+                blank = btn.innerHTML;
+                return Asc(btn.innerHTML);
+            }
+            else  {
+                blank='';
+                return Desc(btn.innerHTML);
+            }
+        }
+        //小到大
+        function Asc(btn) {
+            ipad.sort(function (a, b) {
+                if (a[btn] > b[btn]) { return 1 }
+                if (a[btn] < b[btn]) { return -1 }
+                return 0;
+            });
+            var tbody = document.getElementById('tbody');
+            tbody.innerHTML = '';
+            
+            addTbody(ipad);
+        }
+
+        //大到小
+        function Desc(btn) {
+            ipad.sort(function (a, b) {
+                if (a[btn] < b[btn]) { return 1 }
+                if (a[btn] > b[btn]) { return -1 }
+                return 0;
+            });
+            var tbody = document.getElementById('tbody');
+            tbody.innerHTML = '';
+        
+            addTbody(ipad);
+           
         }
 
 
