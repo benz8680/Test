@@ -92,7 +92,7 @@
 
         function addTbody(bodyArray) {
             var tbody = document.createElement('tbody');
-            tbody.setAttribute('id','tbody');
+            tbody.setAttribute('id', 'tbody');
             for (let x in bodyArray) {
                 let tr = document.createElement('tr');
                 for (let i in bodyArray[x]) {
@@ -117,8 +117,8 @@
                 blank = btn.innerHTML;
                 return Asc(btn.innerHTML);
             }
-            else  {
-                blank='';
+            else {
+                blank == '';
                 return Desc(btn.innerHTML);
             }
         }
@@ -131,7 +131,7 @@
             });
             var tbody = document.getElementById('tbody');
             tbody.innerHTML = '';
-            
+
             addTbody(ipad);
         }
 
@@ -144,9 +144,9 @@
             });
             var tbody = document.getElementById('tbody');
             tbody.innerHTML = '';
-        
+
             addTbody(ipad);
-           
+
         }
 
 
