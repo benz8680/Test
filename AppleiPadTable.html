@@ -60,12 +60,12 @@
             xhr.onload = function () {
 
 
-                ipad = JSON.parse(this.responseText);
+                ipad = JSON.parse(this.responseText).products;
                 addThead(ipad);
                 addTbody(ipad);
 
             }
-            xhr.open('GET', "http://127.0.0.1:5503/iPad.json");
+            xhr.open('GET', "https://bs-frontend.azurewebsites.net/api/Apple/IPad");
             xhr.send();
 
         }
