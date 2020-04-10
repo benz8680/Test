@@ -48,22 +48,38 @@
         type: "Get",
         url: "https://findmasks.herokuapp.com/places",
         success: function (response) {
-
+          let all = response;
           let longitude = [];
           let latitude = [];
-          for (var i = 0; i < response.features.length; i++) {
-            longitude[i] = response.features[i].geometry.coordinates[1];
-            latitude[i] = response.features[i].geometry.coordinates[0];
+          for (var i = 0; i < all.features.length; i++) {
+            longitude[i] = all.features[i].geometry.coordinates[1];
+            latitude[i] = all.features[i].geometry.coordinates[0];
             
-            markers = new google.maps.Marker({
-              position: { lat: longitude[i], lng: latitude[i] },
-              map: map,
-              icon: {
-                url: "mask.png",
-                scaledSize: new google.maps.Size(30, 30)
-              }
-            });
+            if (all.features[i].properties.masksLeft || all.features[i].properties.childMasksLeft == 0) {
+              markers = new google.maps.Marker({
+                position: { lat: longitude[i], lng: latitude[i] },
+                map: map,
+                icon: {
+                  url: "sad.png",
+                  scaledSize: new google.maps.Size(30, 30)
+                }
+              });
+            }
+            else{
+              markers = new google.maps.Marker({
+                position: { lat: longitude[i], lng: latitude[i] },
+                map: map,
+                icon: {
+                  url: "mask.png",
+                  scaledSize: new google.maps.Size(30, 30)
+                }
+              });
+            }
           }
+          
+
+
+
         }
       });
     }
