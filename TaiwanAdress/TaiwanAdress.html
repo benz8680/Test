@@ -4,27 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../Modules/MyHelper.js"></script>
+    <title>TaiwanAdress</title>
+    <style>
+        button {
+            margin: 0 0 20px;
+        }
+    </style>
+
 </head>
 
-<body>
-    <h1>Taiwan Address / Zip Code</h1>
-    <div id="msg"></div>
-    <button>ZipCode</button>
-    <template>
+<body id="body">
+    <h1>台灣縣市郵遞區號資訊列表</h1>
+    <button>讀取網路資料</button>
+
+
+    <template id="templateTitle">
+        <tr>
+            <td>縣市</td>
+            <td>區域</td>
+            <td>號碼</td>
+
+        </tr>
+    </template>
+    <template id="templateBody">
         <tr>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
+
         </tr>
     </template>
     <script>
-        let btn1 = $g('button');
-        btn1.addEventListener("click", function () {
-
-        });
+        var btn = document.querySelector('button');
+        var body = document.getElementById('body');
+        var table = document.createElement('table');
+        table.setAttribute("border", "2");
+        var thead = document.createElement('thead');
+        var tbody = document.createElement('tbody');
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        body.appendChild(table);
 
 
         window.onload = function () {
@@ -33,30 +52,62 @@
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     zipcodeArray = JSON.parse(this.responseText);
 
-                    let ZipCode = [];
-                    zipcodeArray.forEach((item, index) => {
-                        let _city = item.CityName;
-                        let _district = [];
-                        item.AreaList.forEach((item, index) => {
-                            _district.push({ District: item.AreaList, ZipCode: item.ZipCode })
+                    var ZipCode = [];
+                    zipcodeArray.forEach((city) => {
+                        city.AreaList.forEach((area) => {
+                            ZipCode.push({
+                                City: city.CityName,
+                                Districts: [{ Districts: area.AreaName, ZipCode: area.ZipCode }]
+                            });
                         });
-                        let _cityObject = { City: _city, District: _district };
-                        ZipCode.push(_cityObject);
+                    });
 
-                        // ZipCode.push({ District: item.CityName, ZipCode: item.ZipCode });
-                    })
-                    // ZipCode.push({ City: "台北市", Districts: [{ Districts: "中正區", ZipCode: "100" }] });
-                    // ZipCode.push({ City: "桃園市", Districts: [{ Districts: "桃園區", ZipCode: "330" }] });
+                  
+                    btn.addEventListener('click', function () {
+                        addThead();
+                        ZipCode.forEach((item) => {                          
+                            addTbody(Object.values(item));
+                        });
+                    });
 
-                    debugger;
                 }
                 else {
                     msg.textContent = '發生錯誤，HTTP response代碼:' + xhr.status;
                 }
 
             }
-            xhr.open("GET", "http://127.0.0.1:5500/Examples/TaiwanAdress/TaiwanAdress.json");
+            xhr.open("GET", "http://127.0.0.1:5503/TaiwanAdress/TaiwanAdress.json");
             xhr.send();
+        }
+
+
+
+        function addThead() {
+            let templateTitle = document.getElementById('templateTitle');
+            let cloneContent = templateTitle.content.cloneNode(true);
+            thead.appendChild(cloneContent);
+
+        }
+
+        function addTbody(rowArray) {
+            let templateBody = document.getElementById('templateBody');
+            let cloneContent = templateBody.content.cloneNode(true);
+            let tds = cloneContent.querySelectorAll('td');
+            // debugger;
+            rowArray.forEach((item, index) => {
+                // debugger;
+                if (index == 1) {
+                    item.forEach((x) => {
+                        tds[1].textContent = x.Districts;
+                        tds[2].textContent = x.ZipCode;
+                        tds[0].textContent = rowArray[0];
+                    });
+                }
+
+                // debugger;
+            });
+
+            tbody.appendChild(cloneContent);
         }
     </script>
 </body>
