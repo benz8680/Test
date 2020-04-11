@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../Modules/MyHelper.js"></script>
+</head>
+
+<body>
+    <h1>Taiwan Address / Zip Code</h1>
+    <div id="msg"></div>
+    <button>ZipCode</button>
+    <template>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+    <script>
+        let btn1 = $g('button');
+        btn1.addEventListener("click", function () {
+
+        });
+
+
+        window.onload = function () {
+            let xhr = new XMLHttpRequest;
+            xhr.onload = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    zipcodeArray = JSON.parse(this.responseText);
+
+                    let ZipCode = [];
+                    zipcodeArray.forEach((item, index) => {
+                        let _city = item.CityName;
+                        let _district = [];
+                        item.AreaList.forEach((item, index) => {
+                            _district.push({ District: item.AreaList, ZipCode: item.ZipCode })
+                        });
+                        let _cityObject = { City: _city, District: _district };
+                        ZipCode.push(_cityObject);
+
+                        // ZipCode.push({ District: item.CityName, ZipCode: item.ZipCode });
+                    })
+                    // ZipCode.push({ City: "台北市", Districts: [{ Districts: "中正區", ZipCode: "100" }] });
+                    // ZipCode.push({ City: "桃園市", Districts: [{ Districts: "桃園區", ZipCode: "330" }] });
+
+                    debugger;
+                }
+                else {
+                    msg.textContent = '發生錯誤，HTTP response代碼:' + xhr.status;
+                }
+
+            }
+            xhr.open("GET", "http://127.0.0.1:5500/Examples/TaiwanAdress/TaiwanAdress.json");
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
