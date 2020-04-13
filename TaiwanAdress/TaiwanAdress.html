@@ -98,9 +98,10 @@
                
                 if (index == 1) {
                     item.forEach((x) => {
+                        tds[0].textContent = rowArray[0];
                         tds[1].textContent = x.Districts;
                         tds[2].textContent = x.ZipCode;
-                        tds[0].textContent = rowArray[0];
+                       
                     });
                 }
 
