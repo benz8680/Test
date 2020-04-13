@@ -31,6 +31,7 @@
             <td></td>
             <td></td>
             <td></td>
+            
         </tr>
     </template>
     <script>
@@ -57,14 +58,16 @@
                             ZipCode.push({
                                 City: city.CityName,
                                 Districts: [{ Districts: area.AreaName, ZipCode: area.ZipCode }]
+                                
                             });
                         });
                     });
+                    
 
-                  
+
                     btn.addEventListener('click', function () {
                         addThead();
-                        ZipCode.forEach((item) => {                          
+                        ZipCode.forEach((item) => {
                             addTbody(Object.values(item));
                         });
                     });
@@ -75,7 +78,7 @@
                 }
 
             }
-            xhr.open("GET", "https://raw.githubusercontent.com/gene870607/gene870607-vs_code_javascript_HW/master/JavaScript/TaiwanAddress.json");
+            xhr.open("GET", "https://raw.githubusercontent.com/benz8680/FileStorage/master/TaiwanAdress.json");
             xhr.send();
         }
 
@@ -96,16 +99,17 @@
             rowArray.forEach((item, index) => {
                 // debugger;
                
+             
                 if (index == 1) {
                     item.forEach((x) => {
                         tds[0].textContent = rowArray[0];
                         tds[1].textContent = x.Districts;
                         tds[2].textContent = x.ZipCode;
-                       
+
                     });
                 }
 
-            
+
             });
 
             tbody.appendChild(cloneContent);
