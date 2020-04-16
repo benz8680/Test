@@ -179,13 +179,14 @@
       var a = 0;
       var b = 0;
       var judgment = 0;
-    
+
 
 
 
       if (inputSplitor.length > 4 || inputSplitor.length < 4) {
-     
+
         alert('需要四位數!');
+
         CleanInput();
 
       }
@@ -198,13 +199,17 @@
           for (var y = 0; y < inputSplitor.length; y++) {
             if (inputSplitor[x] == inputSplitor[y])
               judgment += 1;
+
           }
         }
 
 
         if (judgment != 4) {
+
           alert('數字重複!');
+        
           CleanInput();
+
         }
 
         else {

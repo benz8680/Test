@@ -4,13 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+        integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <title>Apple iPad</title>
     <style>
         h1 {
             text-align: center;
         }
 
-        #title {
+        thead {
+
             background-color: #f00;
         }
 
@@ -30,12 +35,17 @@
             background-color: #0df;
         }
 
-        #title {
+        th{
             border: 2px solid #000;
             transition: .1s;
         }
 
-        #title:hover {
+        #x {
+            border: 2px solid #000;
+            transition: .1s;
+        }
+
+        th:hover {
             background-color: #fff;
             cursor: pointer;
         }
@@ -51,111 +61,98 @@
     <script>
         var body = document.getElementById('body');
         var table = document.createElement('table');
-
-
         body.appendChild(table);
-
         let ipad = '';
+     
+
         window.onload = function () {
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
-
-
                 ipad = JSON.parse(this.responseText).products;
                 addThead(ipad);
-                addTbody(ipad);
-
             }
-            xhr.open('GET', "https://bs-frontend.azurewebsites.net/api/Apple/IPad");
+            xhr.open("GET", 'https://raw.githubusercontent.com/yue3053/BS-HW/master/JS-hw/ipad.json');
             xhr.send();
-
-        }
+        };
 
         function addThead(titleArray) {
             let thead = document.createElement('thead');
             let tr = document.createElement('tr');
-            for (let x in titleArray[0]) {
+            for (let i in titleArray[0]) {
                 let th = document.createElement('th');
-                th.innerHTML = x;
-                th.setAttribute('type', 'button');
-                th.setAttribute('onclick', 'Sort(this)');
-                th.setAttribute('id', 'title');
+                th.innerHTML = i + '<i class="fas fa-sort"></i>';
+                th.setAttribute('onclick', 'SortBtn(this)');
+                th.setAttribute('id', i);
                 tr.appendChild(th);
             }
-
             thead.appendChild(tr);
-            table.appendChild(thead);
+            table.append(thead);
 
+            let tbody = document.createElement('tbody');
+            table.append(tbody);
 
-
+            addTbody(titleArray);
         }
-
 
         function addTbody(bodyArray) {
-            let tbody = document.createElement('tbody');
-            tbody.setAttribute('id', 'tbody');
-            for (let x in bodyArray) {
+            let tbody = document.querySelector('tbody');
+            for (let i in bodyArray) {
                 let tr = document.createElement('tr');
-                for (let i in bodyArray[x]) {
-                    // console.log(bodyArray[x][i]);
+                for (let j in bodyArray[i]) {
                     let td = document.createElement('td');
-                    td.innerHTML = bodyArray[x][i];
+                    td.innerHTML = bodyArray[i][j];
                     tr.appendChild(td);
                 }
-
                 tbody.appendChild(tr);
             }
-
-            table.appendChild(tbody);
-
         }
 
-
-        let blank = "";
-
-        function Sort(btn) {
-            if (blank != "") {
-               
-
-                return Asc(btn.innerHTML);
-            }
-            else {
-                blank = "";
-                return Desc(btn.innerHTML);
-            }
-
-            
-
-        }
-        // 小到大
-        function Asc(btn) {
-            ipad.sort(function (a, b) {
-                if (a[btn] > b[btn]) { return 1 }
-                if (a[btn] < b[btn]) { return -1 }
-                return 0;
-            });
-
-            let tbody = document.getElementById('tbody');
-            tbody.innerHTML = "";
-            addTbody(ipad);
-           
-        }
-
-        //大到小
-        function Desc(btn) {
-            ipad.sort(function (a, b) {
-                if (a[btn] < b[btn]) { return 1 }
-                if (a[btn] > b[btn]) { return -1 }
-                return 0;
-            });
-            let tbody = document.getElementById('tbody');
-            tbody.innerHTML = "";
-
-            addTbody(ipad);
         
+        var ifDescending = false;
 
+        function SortBtn(btn) {
+            let i = btn.id;
+            chooseSort(i);
+            if (!ifDescending) {
+                ipad.sort(function (a, b) {
+                    if (a[i] > b[i]) return 1;
+                    if (a[i] < b[i]) return -1;
+                    return 0;
+                });
+            } else {
+                ipad.sort(function (a, b) {
+                    if (a[i] < b[i]) return 1;
+                    if (a[i] > b[i]) return -1;
+                    return 0;
+                });
+            }
+            changeIcons(btn);
+            let tbody = document.querySelector('tbody');
+            tbody.innerHTML = '';
+            addTbody(ipad);
         }
 
+        function changeIcons(btn) {
+          
+            let i = document.querySelector(`th#${btn.id}>i`)
+            if (ifDescending) {
+                i.setAttribute('class', 'fas fa-sort-down');
+            } else {
+                i.setAttribute('class', 'fas fa-sort-up');
+            }
+        }
+        var sortType = '';
+
+        function chooseSort(item) {
+            if (item != sortType) {
+                sortType = item;
+                ifDescending = false;
+            } else {
+                ifDescending = !ifDescending;
+            }
+        }
+
+   
 
 
     </script>
