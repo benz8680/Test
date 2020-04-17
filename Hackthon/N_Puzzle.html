@@ -11,11 +11,11 @@
 
     <title>Hello, world!</title>
     <style>
-        .container {
-            margin: 60px auto 20px;
-            width: 600px;
-            height: 500px;
-            border: 2px solid #2ff;
+        .divPuzzle {
+            width: 480px;
+            height: 480px;
+            border: solid 3px blue;
+            padding: 0;
         }
 
         .container img {
@@ -34,14 +34,15 @@
             height: 30px;
         }
 
-        .picbox{
-            background-image: url("https://picsum.photos/300/200?random=1");
+        .picbox {
+            background-image: url("../abstract-dynamic-pattern-wallpaper-vector_53876-59131.jpg");
             height: 100%;
             width: 100%;
+            margin-bottom: 60%;
         }
 
         .pic {
-            background-image: url("https://picsum.photos/300/200?random=1");
+            background-image: url("../abstract-dynamic-pattern-wallpaper-vector_53876-59131.jpg");
         }
     </style>
 </head>
@@ -49,20 +50,10 @@
 <body>
 
 
-    <div class="container col-12 col-md-12 ">
-        <div class="picbox">
-            <div class="pic" data-index='1' style='background-position:0px 0px;left:0px;top:0px;'></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <button type="button">重新開始</button>
+    <div class="container divPuzzle"></div>
+
+
+    <button type="button">打亂</button>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
