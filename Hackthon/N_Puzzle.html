@@ -43,15 +43,16 @@
         var body = document.getElementById('body');
         var dvPuzzle = document.getElementById('dvPuzzle');
         body.appendChild(dvPuzzle);
+        abc();
 
-        $(function () {
+        function abc () {
             //將位置轉成座標的換算表
             var posConv = {};
             //填入16張圖
             for (var i = 0; i < 16; i++) {
                 var picCellDiv = document.createElement('div');
                 picCellDiv.setAttribute('class', 'PicCell col-3');
-                picCellDiv.setAttribute('id', `pic${i}`);
+                picCellDiv.setAttribute('id', `Pic${i}`);
                 var img = document.createElement('img');
                 img.src = 'Building.jpg';
                 picCellDiv.appendChild(img);
@@ -65,10 +66,12 @@
 
                 // $("#Pic" + i + " img").css("margin-left", col * -120 + 1).css("margin-top", row * -120 + 1);
                 //第i個換成第row列第col行
-                posConv[i] = { row: `${row}`, col: `${col}`};
+                posConv[i] = { row: row, col: col};
+               
             }
+            console.log(posConv);
             //將左上角圖塊移除
-            var pic0 = document.querySelector('#pic0 img')
+            var pic0 = document.querySelector('#Pic0 img')
             pic0.remove();
             //取得四周相鄰的位置
             function getNearPos(i) {
@@ -85,12 +88,12 @@
                     pool.push(i + 1);
                 return pool;
             }
-            //點選動作
+            
             picCellDiv.click(function () {
                 //找尋上下左右有沒有Pic0，有則可以與它交換位置
                 //先找出元素是16個中第幾個?
                 var cells = document.querySelectorAll('#dvPuzzle div');
-                // var cells = $("#dvPuzzle div");
+                var cells = $("#dvPuzzle div");
                 var i = cells.index(this);
                 var toCheck = getNearPos(i);
                 while (toCheck.length > 0) {
@@ -126,7 +129,7 @@
                     ]).click();
                 }
             });
-        });
+        };
     </script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

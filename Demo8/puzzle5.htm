@@ -8,7 +8,7 @@
 <style type="text/css">
 #dvPuzzle {
 	 width: 480px; height: 480px;
-	 border: solid 5px blue;
+	 border: solid 5px #000;
 	 padding: 0px;
 }
 .PicCell {
@@ -26,14 +26,14 @@ $(function() {
 	//將位置轉成座標的換算表
 	var posConv = { };
 	//填入16張圖
-	for (var i=0; i<16; i++)
+	for (let i=0; i<16; i++)
 	{
-		$("#dvPuzzle").append("<div class='PicCell' id='Pic" + i + "'><img src='Building.jpg' /></div>");	
+		$("#dvPuzzle").append("<div class='PicCell' id='Pic" + i + "'><img src='wallpapersden.com_beholder-2_480x480.jpg' /></div>");	
 		var row = parseInt(i / 4);
 		var col = i % 4;
 		$("#Pic" + i + " img").css("margin-left", col * -120 + 1).css("margin-top", row * -120 + 1);
 		//第i個換成第row列第col行
-		posConv[i] = { row:row, col:col };
+		posConv[i] = { "row":row, "col":col };
 	}
 	//將左上角圖塊移除
 	$("#Pic0 img").remove();
@@ -43,21 +43,28 @@ $(function() {
 		var row = posConv[i].row, col = posConv[i].col;
 		//toCheck用來放入待比對的對象
 		if (row > 0) //上
-			pool.push((row - 1) *  4 + col);
+			pool.push((row - 1) *  4+ col);
 		if (row < 4) //下
 			pool.push((row + 1) * 4 + col);
 		if (col  >  0) //左
 			pool.push( i - 1);
 		if (col < 4) //右
 			pool.push(i + 1);
+			
 		return pool;
+		
+		// debugger;
+	
 	}
+	
 	//點選動作
 	$(".PicCell").click(function() {
 		//找尋上下左右有沒有Pic0，有則可以與它交換位置
 		//先找出元素是16個中第幾個?
 		var cells = $("#dvPuzzle div");
 		var i = cells.index(this);
+		console.log(i);
+		debugger;
 		var toCheck = getNearPos(i);
 		while (toCheck.length > 0) {
 			var j = toCheck.pop();
@@ -80,6 +87,7 @@ $(function() {
 			}		
 		}
 	});
+	
 	$("input:button").click(function() {
 		for (var i = 0; i < 500; i++) {
 			var cells = $("#dvPuzzle div");
