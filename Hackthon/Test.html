@@ -1,45 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-
-    </style>
 </head>
-
 <body>
-    <div id="myImageElementInTheDom"></div>
-
-
     <script>
-        var image = new Image();
-        image.onload = cutImageUp;
-        image.src = 'girl-500x500.jpg';
-
-        function cutImageUp() {
-            var imagePieces = [];
-            for (var x = 0; x < 3; ++x) {
-                for (var y = 0; y < 3; ++y) {
-                    var canvas = document.createElement('canvas');
-                    canvas.width = 3;
-                    canvas.height = 3;
-                    var context = canvas.getContext('2d');
-                    context.drawImage(image, x * 3, y * 3, 3, 3, 0, 0, canvas.width, canvas.height);
-                    imagePieces.push(canvas.toDataURL('girl-500x500.jpg'));
-                }
-            }
-
-            // imagePieces now contains data urls of all the pieces of the image
-
-            // load one piece onto the page
-            var anImageElement = document.getElementById('myImageElementInTheDom');
-            anImageElement.src = imagePieces[0];
-        }
+        var i=3%4
+        console.log(i)
     </script>
-
+    
 </body>
-
 </html>

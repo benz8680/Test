@@ -15,247 +15,140 @@
         .picture {
             border: 1px solid black;
         }
+
+        .coontainer {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-    <div id="slider">
+    <div class="coontainer">
+        <div id="slider">
 
-        <form>
-            <button id="scale">重新開始</button>
-            <img id="source" width="120px" height="120px" src="girl-500x500.jpg">
-        </form>
-        <br>
+            <form>
+
+                <img id="source" width="120px" height="120px" src="girl-500x500.jpg">
+                <button id="scale">重新開始</button>
+            </form>
+            <br>
+        </div>
+
+        <div id="main" class="main">
+            <canvas id="puzzle" width="480px" height="480px"></canvas>
+        </div>
     </div>
 
-    <div id="main" class="main">
-        <canvas id="puzzle" width="480px" height="480px"></canvas>
-    </div>
     <script>
-
-
         var context = document.getElementById('puzzle').getContext('2d');
-
         var img = new Image();
-
         img.src = 'girl-500x500.jpg';
-
         img.addEventListener('load', drawTiles, false);
-
-        //load鈭衤辣�菔�踝��朖��𣇉���㰘�匧�峕�𣂷�衤辣
-
-
+        //load事件偵聽，即圖片加載完成事件
 
         var boardSize = document.getElementById('puzzle').width;
-
-        //�㬢��𣇉𧞄�踎嚗�𧞄撣�嚗厩�撖砍漲
-
+        //獲取畫板（畫布）的寬度
         var tileCount = 3;
 
-
         var tileSize = boardSize / tileCount;
+        //計算出拼塊的大小寬度
 
-        //閮��堒枂�𣄽憛羓�憭批�誩祝摨�
-
-
-        var context = document.getElementById('puzzle').getContext('2d');
-
-        var img = new Image();
-
-        img.src = 'girl-500x500.jpg';
-
-        img.addEventListener('load', drawTiles, false);
-
-        //load鈭衤辣�菔�踝��朖��𣇉���㰘�匧�峕�𣂷�衤辣
-
-        var boardSize = document.getElementById('puzzle').width;
-
-        //�㬢��𣇉𧞄�踎嚗�𧞄撣�嚗厩�撖砍漲
-
-        var tileCount = 3;
-
-        //�㬢��𡝗�穃�羓���
-
-        var tileSize = boardSize / tileCount;
-
+        
         var clickLoc = new Object();
-
         clickLoc.x = 0;
-
         clickLoc.y = 0;
-
         var emptyLoc = new Object();
-
         emptyLoc.x = 0;
-
         emptyLoc.y = 0;
-
         var solved = false;
-
-        //�𣄽��𡝗糓�炏摰峕�琜�靕alse�箸𧊋摰峕��
-
+        //拼圖是否完成，false為未完成
         var boardParts = new Object();
-
         initBoard();
-
-        //��嘥�见�𡝗𣄽憛𠺪�䔶蒂�辶璈��鍦��
-
+        //初始化拼塊，並隨機排列
         function initBoard() {
-
             boardParts = new Array(tileCount * tileCount);
-
             for (var i = 0; i < tileCount * tileCount; i++) {
-
                 boardParts[i] = i;
-
             }
-
-            shift(); //�𣄽憛羓��辶璈��鍦��
-
+            shift(); //拼塊的隨機排列
         }
-
-        function sortNumber(a, b) {//�辶璈��鍦�誩遆�彍
-
+        function sortNumber(a, b) {//隨機排序函數
             return Math.random() > 0.5 ? -1 : 1;
-
         }
-
-        function shift() { //�𣄽憛羓��辶璈��鍦��
-
+        function shift() { //拼塊的隨機排列
             boardParts.sort(sortNumber);
-
             emptyLoc.x = 0;
-
             emptyLoc.y = 0;
-
             solved = false;
-
         }
-
-
-
 
 
         function drawTiles() {
-
             context.clearRect(0, 0, boardSize, boardSize);
-
             for (var i = 0; i < tileCount; i++) {
-
                 for (var j = 0; j < tileCount; j++) {
-
                     var n = boardParts[i * tileCount + j];
-
-                    //閮��堒枂蝺刻�毺�槃���𣄽憛𠰴銁��笔�𣇉�雿滨蔭��鞉�辷�����𡑒����
-
+                    //計算出編號為n的拼塊在原圖的位置坐標（行列號）
                     var x = parseInt(n / tileCount);
-
-                    //銝��撠𤩺彍�典�, 靽萘�蹱㟲�彍�典�
-
+                    //丟棄小數部分, 保留整數部分
                     var y = n % tileCount;
-
                     console.log(x + ":" + Math.floor(n / tileCount) + ":" + y);
-
                     if (i != emptyLoc.x || j != emptyLoc.y || solved == true) {
-
-                        //銝齿糓蝛箇蒾�𣄽��𣇉�雿滨蔭銝娪�𦠜��𧊋蝯鞉��
-
-                        //��𤥁��if( !(i==emptyLoc.x&&j== emptyLoc.y&&solved==false))�虾�賣凒摰寞�𤘪�𡒊蒾
-
-                        //撠�楊��毺�槃���𣄽憛𢠃＊蝷箏銁嚗ǎ * tileSize, j * tileSize嚗㕑��
-
+                        //不是空白拼圖的位置且遊戲未結束
+                        //或者if( !(i==emptyLoc.x&&j== emptyLoc.y&&solved==false))可能更容易明白
+                        //將編號為n的拼塊顯示在（i * tileSize, j * tileSize）處
                         context.drawImage(img, x * tileSize, y * tileSize, tileSize, tileSize,
-
                             i * tileSize, j * tileSize, tileSize, tileSize);
-
                     }
-
                 }
-
             }
-
         }
-
 
         document.getElementById('scale').onchange = function () {
-
-            initBoard();//��齿鰵��嘥�见�𡝗𣄽憛𠺪�䔶蒂�辶璈��鍦��
-
-            drawTiles();//憿舐內���𧢲𣄽憛�
-
+            initBoard();//重新初始化拼塊，並隨機排列
+            drawTiles();//顯示各個拼塊
         };
-
         document.getElementById('puzzle').onmousemove = function (e) {
-
             clickLoc.x = Math.floor((e.pageX - this.offsetLeft) / tileSize);
-
             clickLoc.y = Math.floor((e.pageY - this.offsetTop) / tileSize);
-
         };
-
 
         document.getElementById('puzzle').onclick = function () {
-
             if (distance(clickLoc.x, clickLoc.y, emptyLoc.x, emptyLoc.y) == 1) {
-
-                slideTile(emptyLoc, clickLoc);//鈭斗�𥡝◤�鱓��羓��𣄽憛𡃏��征憛𠹺�滨蔭
-
-                drawTiles();//憿舐內���𧢲𣄽憛�
-
+                slideTile(emptyLoc, clickLoc);//交換被單擊的拼塊與空塊位置
+                drawTiles();//顯示各個拼塊
             }
-
-            if (solved) {//憒���𨀣�𣂼��
-
-                setTimeout(function () { alert("雿䭾�𣂼�煺�!"); }, 500);
-
+            if (solved) {//如果成功
+                setTimeout(function () { alert("你成功了!"); }, 500);
             }
-
         };
-
         function distance(x1, y1, x2, y2) {
-
             return Math.abs(x1 - x2) + Math.abs(y1 - y2);
-
         }
-
 
         function slideTile(emptyLoc, clickLoc) {
-
             if (!solved) {
-
                 var t;
-
                 t = boardParts[emptyLoc.x * tileCount + emptyLoc.y];
-
                 boardParts[emptyLoc.x * tileCount + emptyLoc.y] = boardParts[clickLoc.x * tileCount + clickLoc.y];
-
                 boardParts[clickLoc.x * tileCount + clickLoc.y] = t;
-
-                emptyLoc.x = clickLoc.x; //emptyLoc��齿鰵閮㗛�蝛箇蒾憛𠹺�滨蔭
-
+                emptyLoc.x = clickLoc.x; //emptyLoc重新記錄空白塊位置
                 emptyLoc.y = clickLoc.y;
-
-                checkSolved();//瑼Ｘ䰻�糓�炏��𣂼��
-
+                checkSolved();//檢查是否成功
             }
-
         }
-
 
         function checkSolved() {
-
             var flag = true;
-
             for (var i = 0; i < tileCount * tileCount; i++) {
-
                 if (boardParts[i] != i) {
                     flag = false;
-                } //�ế�𪃾��蝝䭾�鍦�烾�摨�
+                } //判斷元素排列順序
             }
-
             solved = flag;
-
         }
+
+
 
 
     </script>

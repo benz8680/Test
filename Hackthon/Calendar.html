@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Calendar</title>
+  <style>
+    #dateTitle {
+      text-align: center;
+    }
+  </style>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <h1 id="dateTitle"></h1>
+  <div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">日</th>
+          <th scope="col">一</th>
+          <th scope="col">二</th>
+          <th scope="col">三</th>
+          <th scope="col">四</th>
+          <th scope="col">五</th>
+          <th scope="col">六</th>
+        </tr>
+      </thead>
+      <tbody id="tbody ">
+        <!-- <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr> -->
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" onclick="pre()">
+      < </button>
+        <button type="button" class="btn btn-primary" onclick="next()">></button>
+  </div>
+
+  <!-- Modal Add -->
+  <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="inputModalLabel">新增項目</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="input-area" class="modal-body">
+          <input id="todo-item" type="text">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">刪除</button>
+          <button type="button" class="btn btn-primary" onclick="save()">存檔</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+    var dateTitle = document.getElementById('dateTitle');
+
+    var nowDate = new Date();
+    var year = nowDate.getFullYear();
+    var month = nowDate.getMonth();
+    var today = nowDate.getDate();
+
+
+
+    var currentIndex;
+    function initial() {
+      var tbody = document.getElementsByTagName('tbody')[0];
+      tbody.innerHTML = '';
+      dateTitle.innerHTML = `${new Date(year, month, 1).getFullYear()}年${new Date(year, month, 1).getMonth() + 1}月`;
+
+      //取得星期
+      var firstDay = new Date(year, month, 1).getDay();
+      //取得該月的天數
+      var dayofMonth = new Date(year, month + 1, 0).getDate();
+      var day = 1;
+      console.log(dayofMonth);
+
+      for (let row = 0; row < 6; row++) {
+        let tr = document.createElement('tr');
+        for (let col = 0; col < 7; col++) {
+          let td = document.createElement('td');
+          if (row == 0 && col < firstDay) {
+
+          }
+          else {
+            if (day <= dayofMonth) {
+              td.innerHTML = day;
+
+              if (localStorage.getItem(`${year}-${month + 1}-${day}`) != null) {
+
+              }
+            }
+            day++;
+
+            td.addEventListener('click', function (e) {
+
+              $('#inputModal').modal('show');
+            });
+
+          }
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      }
+    }
+
+    initial();
+
+    function pre() {
+      month--;
+      initial();
+    }
+
+    function next() {
+      month++;
+      initial();
+    }
+
+    function save() {
+
+    }
+
+
+
+
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
